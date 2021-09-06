@@ -12,9 +12,9 @@ J'ai également pu "formatter" mes fichiers Markdown afin de pouvoir les utilise
 
 <br>
 
-## Séance 2 - A venir...
+## Séance 2 - 06/09/2021
 
-Type the text here...
+Finition des diagrammes de classes et avancement des exercices suivants.
 
 <br>
 
