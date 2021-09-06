@@ -13,8 +13,8 @@ import labyrinthe.ISalle;
  */
 public class Salle implements ISalle{
     
-    private int x;
-    private int y;
+    public int x;
+    public int y;
 
     @Override
     public int getX() {
