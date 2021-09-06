@@ -22,8 +22,7 @@ public class Labyrinthe extends ArrayList<ISalle> implements ILabyrinthe {
         Fichier f = new Fichier(file);
         // dimensions
         largeur=f.lireNombre(); 
-        hauteur=f.lireNombre(); 
-        // ...
+        hauteur=f.lireNombre();
     }
 
     @Override
