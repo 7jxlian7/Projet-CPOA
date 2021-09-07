@@ -34,7 +34,7 @@ J'ai essayé de comprendre un peu mieux le code fourni, puis j'ai également ter
 
 ## Séance 4 - 07/09/2021 (Matin)
 
-Ce matin j'ai revu les exercices 4 et 5 (notamment la création d'une ```Salle```), puis j'ai terminé l'exercice 6 et 7. J'ai passé du temps pour comprendre l'exercice 6.
+Ce matin j'ai revu les exercices 4 et 5 (notamment la création d'une ```Salle```), puis j'ai terminé l'exercice 6 et 7. J'ai passé du temps pour comprendre l'exercice 6. J'ai commencé l'exercice 8.
 
 <br>
 

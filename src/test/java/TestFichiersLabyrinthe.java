@@ -59,7 +59,7 @@ public class TestFichiersLabyrinthe {
         int largeur = 0, hauteur = 0;
 
         try {
-            sc = new Scanner("labys\"" + f.getName());
+            sc = new Scanner(f);
         } catch (Exception e) {
             System.out.println(e);
         }
