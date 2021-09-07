@@ -32,9 +32,9 @@ J'ai essayé de comprendre un peu mieux le code fourni, puis j'ai également ter
 
 <br>
 
-## Séance 4 - A venir...
+## Séance 4 - 07/09/2021 (Matin)
 
-Type the text here...
+Ce matin j'ai revu les exercices 4 et 5 (notamment la création d'une ```Salle```), puis j'ai terminé l'exercice 6. J'ai passé du temps pour comprendre l'exercice 6.
 
 <br>
 
