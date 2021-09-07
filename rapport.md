@@ -42,6 +42,6 @@ Ce matin j'ai revu les exercices 4 et 5 (notamment la création d'une ```Salle``
 
 <br>
 
-## Séance 5 - A venir...
+## Séance 5 - 07/09/2021 (Soirée)
 
-Type the text here...
+J'ai terminé l'exercice 8, qui ne m'a pris que très peu de temps, et un peu arrangé les tests.

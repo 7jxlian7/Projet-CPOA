@@ -2,7 +2,6 @@
 import static org.junit.Assert.*;
 import java.io.File;
 import org.junit.Test;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -24,7 +23,11 @@ public class TestFichiersLabyrinthe {
     public void testCoordonneesSalles() {
         File repertoire = new File("labys/");
         File[] fichiers = getFiles(repertoire);
+        System.out.println();
+        System.out.println("** Test coordonnées salles **");
+        System.out.println();
         for (File f : fichiers) {
+            System.out.println(f);
             System.out.print("* Test du fichier : " + f.getName());
             if (!testCoordonneesSallesFichier(f)) {
                 System.out.print(" (fichier invalide)");
@@ -37,6 +40,9 @@ public class TestFichiersLabyrinthe {
     public void testPasDeDoublon() {
         File repertoire = new File("labys/");
         File[] fichiers = getFiles(repertoire);
+         System.out.println("** Test doublon salles **");
+         System.out.println();
+         System.out.println();
         for (File f : fichiers) {
             System.out.print("* Test du fichier : " + f.getName());
             if (!testPasDeDoublonFichier(f)) {
