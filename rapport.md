@@ -44,4 +44,4 @@ Ce matin j'ai revu les exercices 4 et 5 (notamment la création d'une ```Salle``
 
 ## Séance 5 - 07/09/2021 (Soirée)
 
-J'ai terminé l'exercice 8, qui ne m'a pris que très peu de temps, et un peu arrangé les tests.
+J'ai terminé l'exercice 8, qui ne m'a pris que très peu de temps, et un peu arrangé les tests. J'ai également fait l'exercice 9 sans problème.
