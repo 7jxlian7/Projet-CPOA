@@ -55,10 +55,11 @@ public class TestFichiersLabyrinthe {
 
     public boolean testCoordonneesSallesFichier(File f) {
         Scanner sc = null;
+        
         int largeur = 0, hauteur = 0;
 
         try {
-            sc = new Scanner(f);
+            sc = new Scanner("labys\"" + f.getName());
         } catch (Exception e) {
             System.out.println(e);
         }
