@@ -23,6 +23,7 @@ public class Dessin extends Canvas {
     private Image solImage;
     private Image salleImage;
     private Image sortieImage;
+    private Image entreeImage;
     private Image murImage;
 
     public Dessin(ILabyrinthe labyrinthe, Collection<ISprite> sprites) {
@@ -38,6 +39,7 @@ public class Dessin extends Canvas {
     public void chargementImages() {
         solImage = new Image("file:icons/pyramide.jpg");
         sortieImage = new Image("file:icons/sortie.gif");
+        entreeImage = new Image("file:icons/groundP.gif");
         salleImage = new Image("file:icons/ground.gif");
         murImage = new Image("file:icons/mur0.gif");
     }
@@ -58,6 +60,10 @@ public class Dessin extends Canvas {
             tampon.drawImage(salleImage, salle.getX() * unite, salle.getY() * unite);
         };
 
+        // Dessine l'entree
+        ISalle entree = labyrinthe.getEntree();
+        tampon.drawImage(entreeImage, entree.getX() * unite, entree.getY() * unite);
+        
         // Dessine la sortie
         ISalle sortie = labyrinthe.getSortie();
         tampon.drawImage(sortieImage, sortie.getX() * unite, sortie.getY() * unite);

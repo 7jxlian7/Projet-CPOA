@@ -3,8 +3,8 @@ import static org.junit.Assert.*;
 import java.io.File;
 import org.junit.Test;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
-import labyrinthe.Salle;
 
 /**
  *
@@ -25,9 +25,11 @@ public class TestFichiersLabyrinthe {
         File repertoire = new File("labys/");
         File[] fichiers = getFiles(repertoire);
         for (File f : fichiers) {
+            System.out.print("* Test du fichier : " + f.getName());
             if (!testCoordonneesSallesFichier(f)) {
-                //System.out.println(f.getName());
+                System.out.print(" (fichier invalide)");
             }
+            System.out.println();
         }
     }
 
@@ -36,11 +38,11 @@ public class TestFichiersLabyrinthe {
         File repertoire = new File("labys/");
         File[] fichiers = getFiles(repertoire);
         for (File f : fichiers) {
-            System.out.println("* Test du fichier : " + f.getName());
-            if(!testPasDeDoublonFichier(f)){
-                System.out.println("* Fichier invalide : " + f.getName());
-                System.out.println();
-            };
+            System.out.print("* Test du fichier : " + f.getName());
+            if (!testPasDeDoublonFichier(f)) {
+                System.out.print(" (fichier invalide)");
+            }
+            System.out.println();
         }
     }
 
@@ -83,14 +85,16 @@ public class TestFichiersLabyrinthe {
         } catch (Exception e) {
             System.out.println(e);
         }
+        
+        // On récupère les coordonnées du labyrinthe
+        int largeur = sc.nextInt();
+        int hauteur = sc.nextInt();
 
-        // On saute la première ligne
-        if (sc.hasNextLine()) {
-            sc.nextLine();
+        // Déclaration et remplissage du tableau de test
+        boolean[][] listeSalles = new boolean[500][500];
+        for (boolean[] row : listeSalles) {
+            Arrays.fill(row, false);
         }
-
-        ArrayList listeSalles = new ArrayList();
-        Salle s = null;
 
         int x, y = 0;
 
@@ -98,14 +102,11 @@ public class TestFichiersLabyrinthe {
             x = sc.nextInt();
             if (sc.hasNextInt()) {
                 y = sc.nextInt();
-                s = new Salle(x, y);
-                if (!listeSalles.contains(s)) {
-                    listeSalles.add(s);
+                if (!listeSalles[x][y]) {
+                    listeSalles[x][y] = true;
                 } else {
                     return false;
                 }
-            } else {
-                return false;
             }
         }
         return true;

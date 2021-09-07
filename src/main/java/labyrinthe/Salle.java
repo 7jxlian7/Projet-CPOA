@@ -5,16 +5,22 @@
  */
 package labyrinthe;
 
+import java.util.Objects;
 import labyrinthe.ISalle;
 
 /**
  *
  * @author jforme
  */
-public class Salle implements ISalle{
-    
+public class Salle implements ISalle {
+
     public int x;
     public int y;
+
+    public Salle(int x, int y) {
+        this.x = x;
+        this.y = y;
+    }
 
     @Override
     public int getX() {
@@ -30,5 +36,4 @@ public class Salle implements ISalle{
     public boolean estAdjacente(ISalle autre) {
         return false;
     }
-    
 }
