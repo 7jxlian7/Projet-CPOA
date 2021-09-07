@@ -33,8 +33,8 @@ public class Fichier {
     public static boolean testValide(String nomFichier) {
         boolean isValid = true;
 
-        File fichier = new File("labys/" + nomFichier);
-        
+        File fichier = new File(nomFichier);
+
         Scanner sc = null;
 
         try {
@@ -42,9 +42,8 @@ public class Fichier {
         } catch (Exception e) {
             System.out.println(e);
         }
-        
+
         // Test coordonnées salles fichier
-        
         int largeur = 0, hauteur = 0;
         if (sc.hasNextLine()) {
             largeur = sc.nextInt();
@@ -57,8 +56,14 @@ public class Fichier {
             }
         }
 
+        // Remise à zéro du scanner
+        try {
+            sc = new Scanner(fichier);
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+
         // Test pas de doublon fichier
-        
         // On récupère les coordonnées du labyrinthe
         largeur = sc.nextInt();
         hauteur = sc.nextInt();
@@ -75,10 +80,12 @@ public class Fichier {
             x = sc.nextInt();
             if (sc.hasNextInt()) {
                 y = sc.nextInt();
-                if (!listeSalles[x][y]) {
-                    listeSalles[x][y] = true;
-                } else {
-                    isValid = false;
+                if (x >= 0 && y >= 0) {
+                    if (!listeSalles[x][y]) {
+                        listeSalles[x][y] = true;
+                    } else {
+                        isValid = false;
+                    }
                 }
             }
         }

@@ -109,8 +109,12 @@ public class TestFichiersLabyrinthe {
             x = sc.nextInt();
             if (sc.hasNextInt()) {
                 y = sc.nextInt();
-                if (!listeSalles[x][y]) {
-                    listeSalles[x][y] = true;
+                if (x >= 0 && y >= 0) {
+                    if (!listeSalles[x][y]) {
+                        listeSalles[x][y] = true;
+                    } else {
+                        return false;
+                    }
                 } else {
                     return false;
                 }

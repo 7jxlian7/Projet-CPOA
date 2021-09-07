@@ -1,5 +1,6 @@
 package labyrinthe;
 
+import exceptions.ExceptionInvalidFile;
 import java.util.ArrayList;
 import java.util.Collection;
 
@@ -19,7 +20,23 @@ public class Labyrinthe extends ArrayList<ISalle> implements ILabyrinthe {
 
     @Override
     public void creerLabyrinthe(String file) {
-        Fichier f = new Fichier(file);
+        Fichier f;
+        
+        try {
+            if (!Fichier.testValide(file)) {
+                throw new ExceptionInvalidFile();
+            } else {
+                f = new Fichier(file);
+            }
+        } catch (ExceptionInvalidFile e) {
+            System.out.println("Exception : Fichier invalide.");
+            String rescueLevel = "labys/level7.txt";
+            f = new Fichier(rescueLevel);
+            if(!Fichier.testValide(rescueLevel)){
+                System.exit(1);
+            }
+        }
+        
         // dimensions
         largeur = f.lireNombre();
         hauteur = f.lireNombre();
