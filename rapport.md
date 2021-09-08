@@ -46,10 +46,32 @@ Ce matin j'ai revu les exercices 4 et 5 (notamment la création d'une ```Salle``
 
 J'ai terminé l'exercice 8, qui ne m'a pris que très peu de temps, et un peu arrangé les tests. J'ai également fait l'exercice 9 sans problème. J'ai résolu l'exercice 10 en une vingtaine de minutes (je pensais avoir une bonne façon de faire, or ce n'était pas adapté). Par la suite j'ai aussi terminé les exercices 11, 12 et 13 assez rapidement.
 
+<br>
+
+---
+
+<br>
+
 ## Séance 6 - 08/09/2021 (Matin)
 
 J'ai revu les codes des exercices précédents. J'ai eu du mal pour l'exerice 14 car je pense que l'exercice 13 n'était pas correctement fait.
 
+<br>
+
+---
+
+<br>
+
 ## Séance 7 - 08/09/2021 (Après-midi)
 
 J'ai du reprendre les exercices 11, 12, 13 et 14 pour mieux comprendre le fonctionnement du code.
+
+<br>
+
+---
+
+<br>
+
+## Séance 8 - 08/09/2021 (Soirée)
+
+J'ai enfin pu faire bouger mon personnage, j'ai donc terminé les exercices 14 et 15 avec quelques difficultés...
