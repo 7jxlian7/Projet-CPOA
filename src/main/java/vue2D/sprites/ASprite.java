@@ -37,4 +37,5 @@ public abstract class ASprite implements ISprite {
     public void setCoordonnees(int xpix, int ypix) {
         sprite.setPosition(new Salle(xpix, ypix));
     }
+    
 }

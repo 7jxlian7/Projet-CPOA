@@ -13,17 +13,18 @@ import labyrinthe.ISalle;
  */
 public abstract class APersonnage implements IPersonnage {
     
-    public ISalle currentPosition;
+    public ISalle salleChoisie;
     
     // renvoie sa position courante
     @Override
     public ISalle getPosition(){
-        return currentPosition;
+        return salleChoisie;
     }
     
     // definit sa position courante
     @Override
     public void setPosition(ISalle s){
-        currentPosition = s;
+        System.out.println(salleChoisie.getX() + ";" + salleChoisie.getY());
+        salleChoisie = s;
     }
 }

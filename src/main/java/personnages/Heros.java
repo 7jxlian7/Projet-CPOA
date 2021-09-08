@@ -13,19 +13,21 @@ import labyrinthe.ISalle;
  * @author Julian
  */
 public class Heros extends APersonnage {
-
-    public ISalle salleChoisie;
+    
+    ISalle currentPosition;
     
     public Heros(ISalle salleChoisie) {
+        this.currentPosition = salleChoisie;
         this.salleChoisie = salleChoisie;
     }
     
     @Override
     public ISalle faitSonChoix(Collection<ISalle> sallesAccessibles) {
         if(sallesAccessibles.contains(salleChoisie)){
+            currentPosition = salleChoisie;
             return salleChoisie;
         } else {
-            return this.getPosition();
+            return currentPosition;
         }
     }
     

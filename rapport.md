@@ -52,4 +52,4 @@ J'ai revu les codes des exercices précédents. J'ai eu du mal pour l'exerice 14
 
 ## Séance 7 - 08/09/2021 (Après-midi)
 
-J'ai du reprendre les exercices 10, 11, 12, 13 et 14 pour mieux comprendre le fonctionnement du code.
+J'ai du reprendre les exercices 11, 12, 13 et 14 pour mieux comprendre le fonctionnement du code.

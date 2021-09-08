@@ -5,6 +5,7 @@
  */
 package labyrinthe;
 
+import java.util.Objects;
 import labyrinthe.ISalle;
 
 /**
@@ -43,10 +44,11 @@ public class Salle implements ISalle {
     @Override
     public int hashCode() {
         int hash = 5;
-        hash = 37 * hash + this.x;
-        hash = 37 * hash + this.y;
+        hash = 97 * hash + this.x;
+        hash = 97 * hash + this.y;
         return hash;
     }
+
 
     @Override
     public boolean equals(Object obj) {

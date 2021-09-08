@@ -21,28 +21,40 @@ import personnages.IPersonnage;
  */
 public class HerosSprite extends ASprite implements EventHandler<KeyEvent> {
 
-    Heros heros;
-
     public HerosSprite(IPersonnage sprite, ILabyrinthe laby) {
         super(sprite, laby);
-        spriteImg = new Image("file:icons/link/LinkRushShield1.gif");
-        heros = new Heros(sprite.getPosition());
+        spriteImg = new Image("file:icons/link/LinkRunShieldD1.gif");
     }
 
     @Override
     public void handle(KeyEvent event) {
+        ISalle salle;
+
         switch (event.getCode()) {
             case LEFT:
-                heros.setSalleChoisie(new Salle(heros.getPosition().getX() - 1, heros.getPosition().getY()));
+                sprite.setPosition(new Salle(sprite.getPosition().getX() - 1, sprite.getPosition().getY()));
+                salle = sprite.faitSonChoix(labyrinthe);
+                System.out.println(sprite.getPosition().getX());
+                sprite.setPosition(salle);
                 break;
             case RIGHT:
-                heros.setSalleChoisie(new Salle(heros.getPosition().getX() + 1, heros.getPosition().getY()));
+                sprite.setPosition(new Salle(sprite.getPosition().getX() + 1, sprite.getPosition().getY()));
+                salle = sprite.faitSonChoix(labyrinthe);
+                System.out.println(sprite.getPosition().getX());
+                sprite.setPosition(salle);
                 break;
             case UP:
-                heros.setSalleChoisie(new Salle(heros.getPosition().getX(), heros.getPosition().getY()-1));
+                sprite.setPosition(new Salle(sprite.getPosition().getX(), sprite.getPosition().getY() - 1));
+                salle = sprite.faitSonChoix(labyrinthe);
+                System.out.println(sprite.getPosition().getX());
+                sprite.setPosition(salle);
                 break;
             case DOWN:
-                heros.setSalleChoisie(new Salle(heros.getPosition().getX(), heros.getPosition().getY()+1));
+                sprite.setPosition(new Salle(sprite.getPosition().getX(), sprite.getPosition().getY() + 1));
+                salle = sprite.faitSonChoix(labyrinthe);
+                System.out.println(sprite.getPosition().getX());
+                sprite.setPosition(salle);
+                break;
         }
     }
 
@@ -60,5 +72,4 @@ public class HerosSprite extends ASprite implements EventHandler<KeyEvent> {
     public void setPosition(ISalle s) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-
 }

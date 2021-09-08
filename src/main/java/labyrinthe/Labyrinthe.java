@@ -41,6 +41,8 @@ public class Labyrinthe extends ArrayList<ISalle> implements ILabyrinthe {
         hauteur = f.lireNombre();
         entree = new Salle(f.lireNombre(), f.lireNombre());
         sortie = new Salle(f.lireNombre(), f.lireNombre());
+        this.add(entree);
+        this.add(sortie);
         int nextInt = f.lireNombre();
         while (nextInt != -1) {
             Salle s = new Salle(nextInt, f.lireNombre());
@@ -51,7 +53,7 @@ public class Labyrinthe extends ArrayList<ISalle> implements ILabyrinthe {
 
     @Override
     public Collection<ISalle> sallesAccessibles(IPersonnage bob) {
-        Collection<ISalle> sallesAccessibles = null;
+        ArrayList<ISalle> sallesAccessibles = new ArrayList<>();
         for(ISalle salle : this){
             if(salle.estAdjacente(bob.getPosition())){
                 sallesAccessibles.add(salle);
