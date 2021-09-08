@@ -8,7 +8,9 @@ package vue2D.sprites;
 import java.util.Collection;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
+import labyrinthe.ILabyrinthe;
 import labyrinthe.ISalle;
+import labyrinthe.Salle;
 import personnages.IPersonnage;
 
 /**
@@ -18,24 +20,23 @@ import personnages.IPersonnage;
 public abstract class ASprite implements ISprite {
     
     IPersonnage sprite;
-    int x;
-    int y;
+    ILabyrinthe labyrinthe;
     ISalle salle;
     Image spriteImg;
 
-    public ASprite(IPersonnage sprite) {
+    public ASprite(IPersonnage sprite, ILabyrinthe laby) {
+        this.labyrinthe = laby;
         this.sprite = sprite;
     }
     
     @Override
     public void dessiner(GraphicsContext g) {
         int unite = 15;
-        g.drawImage(spriteImg, x*unite, y*unite);
+        g.drawImage(spriteImg, salle.getX()*unite, salle.getY()*unite);
     }
 
     @Override
     public void setCoordonnees(int xpix, int ypix) {
-        this.x = xpix;
-        this.y = ypix;
+        salle = new Salle(xpix, ypix);
     }
 }

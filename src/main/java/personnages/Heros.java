@@ -16,6 +16,10 @@ public class Heros extends APersonnage{
 
     public ISalle salleChoisie;
     
+    public Heros(ISalle salleChoisie) {
+        this.salleChoisie = salleChoisie;
+    }
+    
     @Override
     public ISalle faitSonChoix(Collection<ISalle> sallesAccessibles) {
         if(sallesAccessibles.contains(salleChoisie)){

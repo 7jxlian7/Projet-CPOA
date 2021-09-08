@@ -27,7 +27,6 @@ public class TestFichiersLabyrinthe {
         System.out.println("** Test coordonnées salles **");
         System.out.println();
         for (File f : fichiers) {
-            System.out.println(f);
             System.out.print("* Test du fichier : " + f.getName());
             if (!testCoordonneesSallesFichier(f)) {
                 System.out.print(" (fichier invalide)");
