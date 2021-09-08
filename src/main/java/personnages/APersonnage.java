@@ -24,7 +24,6 @@ public abstract class APersonnage implements IPersonnage {
     // definit sa position courante
     @Override
     public void setPosition(ISalle s){
-        System.out.println(salleChoisie.getX() + ";" + salleChoisie.getY());
         salleChoisie = s;
     }
 }

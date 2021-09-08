@@ -34,25 +34,21 @@ public class HerosSprite extends ASprite implements EventHandler<KeyEvent> {
             case LEFT:
                 sprite.setPosition(new Salle(sprite.getPosition().getX() - 1, sprite.getPosition().getY()));
                 salle = sprite.faitSonChoix(labyrinthe);
-                System.out.println(sprite.getPosition().getX());
                 sprite.setPosition(salle);
                 break;
             case RIGHT:
                 sprite.setPosition(new Salle(sprite.getPosition().getX() + 1, sprite.getPosition().getY()));
                 salle = sprite.faitSonChoix(labyrinthe);
-                System.out.println(sprite.getPosition().getX());
                 sprite.setPosition(salle);
                 break;
             case UP:
                 sprite.setPosition(new Salle(sprite.getPosition().getX(), sprite.getPosition().getY() - 1));
                 salle = sprite.faitSonChoix(labyrinthe);
-                System.out.println(sprite.getPosition().getX());
                 sprite.setPosition(salle);
                 break;
             case DOWN:
                 sprite.setPosition(new Salle(sprite.getPosition().getX(), sprite.getPosition().getY() + 1));
                 salle = sprite.faitSonChoix(labyrinthe);
-                System.out.println(sprite.getPosition().getX());
                 sprite.setPosition(salle);
                 break;
         }
