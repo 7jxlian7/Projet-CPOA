@@ -8,6 +8,7 @@ import personnages.IPersonnage;
 import vue2D.IVue;
 import vue2D.sprites.HerosSprite;
 import vue2D.sprites.ISprite;
+import vue2D.sprites.MonstreSprite;
 
 /**
  *
@@ -15,6 +16,7 @@ import vue2D.sprites.ISprite;
  */
 public class Core {
     ISprite heros;
+    ISprite monstre;
     ILabyrinthe labyrinthe;
 
     protected void initLabyrinthe() {
@@ -28,12 +30,16 @@ public class Core {
         IPersonnage h = new personnages.Heros(labyrinthe.getEntree());
         this.heros = new HerosSprite(h, labyrinthe);
         vue.add(this.heros);
+        IPersonnage m = new personnages.Monstre(labyrinthe.getSortie());
+        this.monstre = new MonstreSprite(m, labyrinthe);
+        vue.add(this.monstre);
     }
 
     protected void jeu(IVue vue) {
         // boucle principale
         ISalle destination = null;
         while (!labyrinthe.getSortie().equals(heros.getPosition())) {
+            System.out.println("eee");
             // choix et deplacement
             for (IPersonnage p : vue) {
                 Collection<ISalle> sallesAccessibles = labyrinthe.sallesAccessibles(p);
@@ -58,7 +64,7 @@ public class Core {
                 System.out.println("Perdu !");
                 System.out.println("Plus que " + vue.size() + " personnages ...");
             }
-
+      
             temporisation(50);
         }
         System.out.println("Gagné!");
