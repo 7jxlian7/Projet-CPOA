@@ -3,7 +3,6 @@ package labyrinthe;
 import exceptions.ExceptionInvalidFile;
 import java.util.ArrayList;
 import java.util.Collection;
-
 import outils.Fichier;
 import personnages.IPersonnage;
 

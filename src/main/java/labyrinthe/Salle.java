@@ -5,7 +5,6 @@
  */
 package labyrinthe;
 
-import java.util.Objects;
 import labyrinthe.ISalle;
 
 /**
@@ -34,7 +33,6 @@ public class Salle implements ISalle {
 
     @Override
     public boolean estAdjacente(ISalle autre) {
-        
         if(this.x <= autre.getX() + 1 && this.x >= autre.getX() - 1 && this.y <= autre.getY() + 1 && this.y >= autre.getY() - 1){
             return true;
         } else {

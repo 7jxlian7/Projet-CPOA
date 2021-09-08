@@ -5,7 +5,6 @@
  */
 package vue2D.sprites;
 
-import java.util.Collection;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
 import labyrinthe.ILabyrinthe;
@@ -21,7 +20,6 @@ public abstract class ASprite implements ISprite {
     
     IPersonnage sprite;
     ILabyrinthe labyrinthe;
-    ISalle salle;
     Image spriteImg;
 
     public ASprite(IPersonnage sprite, ILabyrinthe laby) {
@@ -32,11 +30,11 @@ public abstract class ASprite implements ISprite {
     @Override
     public void dessiner(GraphicsContext g) {
         int unite = 15;
-        g.drawImage(spriteImg, salle.getX()*unite, salle.getY()*unite);
+        g.drawImage(spriteImg, sprite.getPosition().getX()*unite, sprite.getPosition().getY()*unite);
     }
 
     @Override
     public void setCoordonnees(int xpix, int ypix) {
-        salle = new Salle(xpix, ypix);
+        sprite.setPosition(new Salle(xpix, ypix));
     }
 }

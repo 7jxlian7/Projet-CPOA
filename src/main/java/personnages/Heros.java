@@ -12,7 +12,7 @@ import labyrinthe.ISalle;
  *
  * @author Julian
  */
-public class Heros extends APersonnage{
+public class Heros extends APersonnage {
 
     public ISalle salleChoisie;
     
@@ -25,7 +25,11 @@ public class Heros extends APersonnage{
         if(sallesAccessibles.contains(salleChoisie)){
             return salleChoisie;
         } else {
-            return currentPosition;
+            return this.getPosition();
         }
+    }
+    
+    public void setSalleChoisie(ISalle salleChoisie){
+        this.salleChoisie = salleChoisie;
     }
 }

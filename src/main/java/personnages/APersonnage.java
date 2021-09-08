@@ -13,7 +13,7 @@ import labyrinthe.ISalle;
  */
 public abstract class APersonnage implements IPersonnage {
     
-    public ISalle currentPosition; 
+    public ISalle currentPosition;
     
     // renvoie sa position courante
     @Override

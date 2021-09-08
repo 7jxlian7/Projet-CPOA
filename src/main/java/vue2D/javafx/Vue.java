@@ -5,6 +5,7 @@ import javafx.scene.Scene;
 import labyrinthe.ILabyrinthe;
 import vue2D.IVue;
 import vue2D.AVue;
+import vue2D.sprites.ISprite;
 
 /**
 *

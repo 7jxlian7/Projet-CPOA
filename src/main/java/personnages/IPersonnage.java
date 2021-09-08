@@ -16,5 +16,5 @@ public interface IPersonnage {
     public ISalle getPosition();
     
     // definit sa position courante
-    public void setPosition( ISalle s);
+    public void setPosition(ISalle s);
 }

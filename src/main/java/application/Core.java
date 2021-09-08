@@ -27,7 +27,7 @@ public class Core {
         // creation du heros 
         IPersonnage h = new personnages.Heros(labyrinthe.getEntree());
         this.heros = new HerosSprite(h, labyrinthe);
-        //vue.add(this.heros);
+        vue.add(this.heros);
     }
 
     protected void jeu(IVue vue) {

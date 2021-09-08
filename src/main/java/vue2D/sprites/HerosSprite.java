@@ -11,6 +11,8 @@ import javafx.scene.image.Image;
 import javafx.scene.input.KeyEvent;
 import labyrinthe.ILabyrinthe;
 import labyrinthe.ISalle;
+import labyrinthe.Salle;
+import personnages.Heros;
 import personnages.IPersonnage;
 
 /**
@@ -19,9 +21,29 @@ import personnages.IPersonnage;
  */
 public class HerosSprite extends ASprite implements EventHandler<KeyEvent> {
 
+    Heros heros;
+
     public HerosSprite(IPersonnage sprite, ILabyrinthe laby) {
         super(sprite, laby);
         spriteImg = new Image("file:icons/link/LinkRushShield1.gif");
+        heros = new Heros(sprite.getPosition());
+    }
+
+    @Override
+    public void handle(KeyEvent event) {
+        switch (event.getCode()) {
+            case LEFT:
+                heros.setSalleChoisie(new Salle(heros.getPosition().getX() - 1, heros.getPosition().getY()));
+                break;
+            case RIGHT:
+                heros.setSalleChoisie(new Salle(heros.getPosition().getX() + 1, heros.getPosition().getY()));
+                break;
+            case UP:
+                heros.setSalleChoisie(new Salle(heros.getPosition().getX(), heros.getPosition().getY()-1));
+                break;
+            case DOWN:
+                heros.setSalleChoisie(new Salle(heros.getPosition().getX(), heros.getPosition().getY()+1));
+        }
     }
 
     @Override
@@ -37,14 +59,6 @@ public class HerosSprite extends ASprite implements EventHandler<KeyEvent> {
     @Override
     public void setPosition(ISalle s) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void handle(KeyEvent event) {
-        switch (event.getCode()) {
-            case LEFT:
-                // this.setCoordonnees(this.getPosition().getX()-1, this.getPosition().getY());
-        } 
     }
 
 }
