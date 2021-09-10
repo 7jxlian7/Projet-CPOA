@@ -6,6 +6,7 @@
 package personnages;
 
 import labyrinthe.ISalle;
+import labyrinthe.Salle;
 
 /**
  *
@@ -13,17 +14,17 @@ import labyrinthe.ISalle;
  */
 public abstract class APersonnage implements IPersonnage {
     
-    public ISalle salleChoisie;
+    public ISalle position;
     
     // renvoie sa position courante
     @Override
     public ISalle getPosition(){
-        return salleChoisie;
+        return position;
     }
     
     // definit sa position courante
     @Override
     public void setPosition(ISalle s){
-        salleChoisie = s;
+         position = s;
     }
 }

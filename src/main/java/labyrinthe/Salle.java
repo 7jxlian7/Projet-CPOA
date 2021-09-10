@@ -5,7 +5,6 @@
  */
 package labyrinthe;
 
-import java.util.Objects;
 import labyrinthe.ISalle;
 
 /**

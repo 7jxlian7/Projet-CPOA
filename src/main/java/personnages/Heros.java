@@ -14,24 +14,30 @@ import labyrinthe.ISalle;
  */
 public class Heros extends APersonnage {
     
-    ISalle currentPosition;
+    public ISalle salleChoisie;
     
-    public Heros(ISalle salleChoisie) {
-        this.currentPosition = salleChoisie;
-        this.salleChoisie = salleChoisie;
+    public Heros(ISalle salle) {
+        this.position = salle;
     }
     
     @Override
     public ISalle faitSonChoix(Collection<ISalle> sallesAccessibles) {
         if(sallesAccessibles.contains(salleChoisie)){
-            currentPosition = salleChoisie;
+            this.position = salleChoisie;
             return salleChoisie;
         } else {
-            return currentPosition;
+            return this.getPosition();
         }
     }
     
-    public void setSalleChoisie(ISalle salleChoisie){
-        this.salleChoisie = salleChoisie;
+    /*
+    @Override
+    public ISalle getPosition(){
+        return currentPosition;
     }
+    
+    @Override
+    public void setPosition(ISalle s){
+        currentPosition = s;
+    }*/
 }

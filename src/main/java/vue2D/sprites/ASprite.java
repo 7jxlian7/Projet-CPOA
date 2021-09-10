@@ -21,6 +21,7 @@ public abstract class ASprite implements ISprite {
     IPersonnage sprite;
     ILabyrinthe labyrinthe;
     Image spriteImg;
+    public int unite = 15;
 
     public ASprite(IPersonnage sprite, ILabyrinthe laby) {
         this.labyrinthe = laby;
@@ -29,8 +30,7 @@ public abstract class ASprite implements ISprite {
     
     @Override
     public void dessiner(GraphicsContext g) {
-        int unite = 15;
-        g.drawImage(spriteImg, sprite.getPosition().getX()*unite, sprite.getPosition().getY()*unite);
+        g.drawImage(spriteImg, sprite.getPosition().getX()*unite, sprite.getPosition().getY()*unite-(spriteImg.getHeight()/2));
     }
 
     @Override

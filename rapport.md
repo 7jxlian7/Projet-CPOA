@@ -75,3 +75,13 @@ J'ai du reprendre les exercices 11, 12, 13 et 14 pour mieux comprendre le foncti
 ## Séance 8 - 08/09/2021 (Soirée)
 
 J'ai enfin pu faire bouger mon personnage, j'ai donc terminé les exercices 14 et 15 avec quelques difficultés... Puis j'ai commencé la suite avec les monstres.
+
+<br>
+
+---
+
+<br>
+
+## Séance 9 - 10/09/2021 (Matin)
+
+J'ai revu encore une fois le code sans terminer d'exercice. J'ai fait déplacer mon personnage d'une autre manière que celle que j'utilisais avant. Je n'avais pas pensé à utiliser un attribut ```Heros``` dans la classe ```HerosSprite.java``` en castant le ```IPersonnage sprite```.
