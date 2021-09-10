@@ -38,6 +38,7 @@ public class Vue extends AVue implements IVue {
     @Override
     public boolean add(ISprite sprite) {
         super.add(sprite);
+        
         // si le sprite est controle par le clavier
         if (sprite instanceof EventHandler) {
             System.out.println("registering keylistener");

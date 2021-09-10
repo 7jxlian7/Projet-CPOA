@@ -18,18 +18,19 @@ public class Monstre extends APersonnage {
 
     Random random = new Random();
     
-    public Monstre(ISalle salleChoisie) {
-       // this.salleChoisie = salleChoisie;
+    public Monstre(ISalle salle) {
+       this.position = salle;
     }
     
     @Override
     public ISalle faitSonChoix(Collection<ISalle> sallesAccessibles) {
-        ArrayList<ISalle> sallesPossibles = new ArrayList<>();
+        /*ArrayList<ISalle> sallesPossibles = new ArrayList<>();
         for(ISalle salle : sallesAccessibles){
-            /*if(salle.estAdjacente(salleChoisie)){
+            if(salle.estAdjacente(position)){
                 sallesPossibles.add(salle);
-            }*/
+            }
         }
-        return sallesPossibles.get(random.nextInt(sallesAccessibles.size()));
+        return sallesPossibles.get(random.nextInt(sallesAccessibles.size()));*/
+        return (ISalle) sallesAccessibles.toArray()[random.nextInt(sallesAccessibles.size())];
     }
 }

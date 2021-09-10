@@ -12,7 +12,6 @@ import javafx.scene.input.KeyEvent;
 import labyrinthe.ILabyrinthe;
 import labyrinthe.ISalle;
 import labyrinthe.Salle;
-import personnages.APersonnage;
 import personnages.Heros;
 import personnages.IPersonnage;
 
@@ -44,7 +43,6 @@ public class HerosSprite extends ASprite implements EventHandler<KeyEvent> {
 
     @Override
     public void handle(KeyEvent event) {
-        ISalle salle = null;
 
         switch (event.getCode()) {
             case LEFT:

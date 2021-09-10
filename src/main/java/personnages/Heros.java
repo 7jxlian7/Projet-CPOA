@@ -23,21 +23,10 @@ public class Heros extends APersonnage {
     @Override
     public ISalle faitSonChoix(Collection<ISalle> sallesAccessibles) {
         if(sallesAccessibles.contains(salleChoisie)){
-            this.position = salleChoisie;
             return salleChoisie;
         } else {
             return this.getPosition();
         }
     }
     
-    /*
-    @Override
-    public ISalle getPosition(){
-        return currentPosition;
-    }
-    
-    @Override
-    public void setPosition(ISalle s){
-        currentPosition = s;
-    }*/
 }

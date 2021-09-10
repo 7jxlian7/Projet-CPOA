@@ -15,6 +15,7 @@ import vue2D.sprites.MonstreSprite;
  * @author INFO Professors team
  */
 public class Core {
+    Collection<ISprite> personnagess;
     ISprite heros;
     ISprite monstre;
     ILabyrinthe labyrinthe;
@@ -30,9 +31,9 @@ public class Core {
         IPersonnage h = new personnages.Heros(labyrinthe.getEntree());
         this.heros = new HerosSprite(h, labyrinthe);
         vue.add(this.heros);
-       /*IPersonnage m = new personnages.Monstre(labyrinthe.getSortie());
+        IPersonnage m = new personnages.Monstre(labyrinthe.getSortie());
         this.monstre = new MonstreSprite(m, labyrinthe);
-        vue.add(this.monstre);*/
+        vue.add(this.monstre);
     }
 
     protected void jeu(IVue vue) {
