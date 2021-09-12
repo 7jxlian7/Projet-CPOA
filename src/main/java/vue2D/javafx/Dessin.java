@@ -33,7 +33,6 @@ public class Dessin extends Canvas {
         setHeight(labyrinthe.getHauteur() * unite);
         tampon = this.getGraphicsContext2D();
         chargementImages();
-        dessinFond();
     }
 
     public void chargementImages() {

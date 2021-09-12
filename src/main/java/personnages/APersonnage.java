@@ -6,7 +6,6 @@
 package personnages;
 
 import labyrinthe.ISalle;
-import labyrinthe.Salle;
 
 /**
  *

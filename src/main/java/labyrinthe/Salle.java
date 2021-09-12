@@ -33,11 +33,16 @@ public class Salle implements ISalle {
 
     @Override
     public boolean estAdjacente(ISalle autre) {
+        /*
+        // Retourne les 8 cases adjacentes
         if(this.x <= autre.getX() + 1 && this.x >= autre.getX() - 1 && this.y <= autre.getY() + 1 && this.y >= autre.getY() - 1){
             return true;
         } else {
             return false;
-        }
+        }*/
+
+        // Retourne les 4 cases adjacentes
+        return (this.x == autre.getX() + 1 && this.y == autre.getY()) || (this.x == autre.getX() - 1 && this.y == autre.getY()) || (this.x == autre.getX() && this.y == autre.getY() + 1) || (this.x == autre.getX() && this.y == autre.getY() - 1);
     }
 
     @Override
@@ -47,7 +52,6 @@ public class Salle implements ISalle {
         hash = 97 * hash + this.y;
         return hash;
     }
-
 
     @Override
     public boolean equals(Object obj) {

@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.Collection;
 import labyrinthe.ILabyrinthe;
 import labyrinthe.ISalle;
+import labyrinthe.Salle;
 import personnages.IPersonnage;
 import vue2D.IVue;
 import vue2D.sprites.HerosSprite;
@@ -15,7 +16,6 @@ import vue2D.sprites.MonstreSprite;
  * @author INFO Professors team
  */
 public class Core {
-    Collection<ISprite> personnagess;
     ISprite heros;
     ISprite monstre;
     ILabyrinthe labyrinthe;
@@ -64,11 +64,12 @@ public class Core {
                 System.out.println("Perdu !");
                 System.out.println("Plus que " + vue.size() + " personnages ...");
             }
-      
+
             temporisation(50);
         }
         System.out.println("Gagné!");
     }
+
 
     private void chargementLaby(String fic) {
         try {

@@ -30,9 +30,9 @@ public class Vue extends AVue implements IVue {
     public void dessiner() {
         // recopie du fond (image); murs + salles
         dessin.dessinFond();
-        for (ISprite s : this) {
+        this.forEach(s -> {
             s.dessiner(dessin.getGraphicsContext2D());
-        }
+        });
     }
 
     @Override

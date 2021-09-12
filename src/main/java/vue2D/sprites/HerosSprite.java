@@ -29,12 +29,12 @@ public class HerosSprite extends ASprite implements EventHandler<KeyEvent> {
 
     public HerosSprite(IPersonnage sprite, ILabyrinthe laby) {
         super(sprite, laby);
-        chargementImages();
+        chargementImagesSprite();
         spriteImg = downSpriteImage;
         heros = (Heros) sprite;
     }
 
-    public void chargementImages() {
+    public final void chargementImagesSprite() {
         leftSpriteImage = new Image("file:icons/link/LinkRunShieldL1.gif");
         upSpriteImage = new Image("file:icons/link/LinkRunU1.gif");
         downSpriteImage = new Image("file:icons/link/LinkRunShieldD1.gif");
@@ -44,25 +44,32 @@ public class HerosSprite extends ASprite implements EventHandler<KeyEvent> {
     @Override
     public void handle(KeyEvent event) {
 
+        int x = heros.getPosition().getX();
+        int y = heros.getPosition().getY();
+        
         switch (event.getCode()) {
             case LEFT:
-                heros.salleChoisie = new Salle(sprite.getPosition().getX() - 1, sprite.getPosition().getY());
+                x--;
+                // heros.salleChoisie = new Salle(sprite.getPosition().getX() - 1, sprite.getPosition().getY());
                 spriteImg = leftSpriteImage;
                 break;
             case RIGHT:
-                heros.salleChoisie = new Salle(sprite.getPosition().getX() + 1, sprite.getPosition().getY());
+                x++;
+                //heros.salleChoisie = new Salle(sprite.getPosition().getX() + 1, sprite.getPosition().getY());
                 spriteImg = rightSpriteImage;
                 break;
             case UP:
-                heros.salleChoisie = new Salle(sprite.getPosition().getX(), sprite.getPosition().getY() - 1);
+                y--;
+                //heros.salleChoisie = new Salle(sprite.getPosition().getX(), sprite.getPosition().getY() - 1);
                 spriteImg = upSpriteImage;
                 break;
             case DOWN:
-                heros.salleChoisie = new Salle(sprite.getPosition().getX(), sprite.getPosition().getY() + 1);
+                y++;
+                //heros.salleChoisie = new Salle(sprite.getPosition().getX(), sprite.getPosition().getY() + 1);
                 spriteImg = downSpriteImage;
                 break;
         }
-
+        heros.salleChoisie = new Salle(x, y);
         heros.faitSonChoix(labyrinthe);
     }
 
