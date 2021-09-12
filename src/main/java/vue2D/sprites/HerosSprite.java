@@ -70,7 +70,7 @@ public class HerosSprite extends ASprite implements EventHandler<KeyEvent> {
                 break;
         }
         heros.salleChoisie = new Salle(x, y);
-        heros.faitSonChoix(labyrinthe);
+        heros.faitSonChoix(labyrinthe.sallesAccessibles(heros));
     }
 
     @Override
