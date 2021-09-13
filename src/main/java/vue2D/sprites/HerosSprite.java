@@ -11,7 +11,6 @@ import javafx.scene.image.Image;
 import javafx.scene.input.KeyEvent;
 import labyrinthe.ILabyrinthe;
 import labyrinthe.ISalle;
-import labyrinthe.Salle;
 import personnages.Heros;
 import personnages.IPersonnage;
 
@@ -69,22 +68,14 @@ public class HerosSprite extends ASprite implements EventHandler<KeyEvent> {
                 spriteImg = downSpriteImage;
                 break;
         }
-        heros.salleChoisie = new Salle(x, y);
-        heros.faitSonChoix(labyrinthe.sallesAccessibles(heros));
-    }
-
-    @Override
-    public ISalle faitSonChoix(Collection<ISalle> sallesAccessibles) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public ISalle getPosition() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void setPosition(ISalle s) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
+        for(ISalle salle : labyrinthe.sallesAccessibles(heros)){
+            if(salle.getX() == x && salle.getY() == y){
+              heros.salleChoisie = salle;  
+            }
+        }
+        
+        // heros.salleChoisie = new Salle(x, y);
+        // heros.faitSonChoix(labyrinthe.sallesAccessibles(heros));
     }
 }

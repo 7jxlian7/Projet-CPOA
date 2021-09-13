@@ -95,3 +95,13 @@ J'ai revu encore une fois le code sans terminer d'exercice. J'ai fait déplacer 
 ## Séance 10 - 10/09/2021 (Après-midi)
 
 J'ai recrée les classes des ```Monstres``` tout en essayant de mieux comprendre le sujet...
+
+<br>
+
+---
+
+<br>
+
+## Séance 11 - 13/09/2021 (Matin)
+
+Nous avons trouvé la solution (grâce à l'aide de Mr. SOPENA) pour faire bouger le personnage et les monstres correctement. Cela nous a pris plus ou moins 3 séances durant lesquelles nous étions complétement bloqués.

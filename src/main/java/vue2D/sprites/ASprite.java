@@ -5,11 +5,13 @@
  */
 package vue2D.sprites;
 
+import java.util.Collection;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
 import labyrinthe.ILabyrinthe;
 import labyrinthe.ISalle;
 import labyrinthe.Salle;
+import personnages.Heros;
 import personnages.IPersonnage;
 
 /**
@@ -18,9 +20,10 @@ import personnages.IPersonnage;
  */
 public abstract class ASprite implements ISprite {
     
-    IPersonnage sprite;
-    ILabyrinthe labyrinthe;
-    Image spriteImg;
+    public IPersonnage sprite;
+    public ILabyrinthe labyrinthe;
+    public Image spriteImg;
+    
     public int unite = 15;
 
     public ASprite(IPersonnage sprite, ILabyrinthe laby) {
@@ -37,5 +40,19 @@ public abstract class ASprite implements ISprite {
     public void setCoordonnees(int xpix, int ypix) {
         sprite.setPosition(new Salle(xpix, ypix));
     }
+
+    @Override
+    public ISalle getPosition() {
+        return sprite.getPosition();
+   }
     
+    @Override
+    public void setPosition(ISalle s) {
+        sprite.setPosition(s);
+    }
+    
+    @Override
+    public ISalle faitSonChoix(Collection<ISalle> sallesAccessibles) {
+        return sprite.faitSonChoix(sallesAccessibles);
+    }
 }

@@ -39,6 +39,7 @@ public class Core {
     protected void jeu(IVue vue) {
         // boucle principale
         ISalle destination = null;
+        System.out.println("jeu");
         while (!labyrinthe.getSortie().equals(heros.getPosition())) {
             // choix et deplacement
             for (IPersonnage p : vue) {

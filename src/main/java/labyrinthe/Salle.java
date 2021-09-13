@@ -48,8 +48,8 @@ public class Salle implements ISalle {
     @Override
     public int hashCode() {
         int hash = 5;
-        hash = 97 * hash + this.x;
-        hash = 97 * hash + this.y;
+        hash = 53 * hash + this.x;
+        hash = 53 * hash + this.y;
         return hash;
     }
 
