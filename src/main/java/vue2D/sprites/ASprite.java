@@ -25,20 +25,47 @@ public abstract class ASprite implements ISprite {
     public Image spriteImg;
     
     public int unite = 15;
+    int x = 0;
+    int y = 0;
 
     public ASprite(IPersonnage sprite, ILabyrinthe laby) {
         this.labyrinthe = laby;
         this.sprite = sprite;
+        x = sprite.getPosition().getX()*unite;
+        y = sprite.getPosition().getY()*unite;
     }
     
     @Override
     public void dessiner(GraphicsContext g) {
-        g.drawImage(spriteImg, sprite.getPosition().getX()*unite, sprite.getPosition().getY()*unite-(spriteImg.getHeight()/2));
+        System.out.println(y);
+        g.drawImage(spriteImg, x, y-(spriteImg.getHeight()/2));       
     }
 
     @Override
     public void setCoordonnees(int xpix, int ypix) {
-        sprite.setPosition(new Salle(xpix, ypix));
+        int xDiff = x - xpix;
+        int yDiff = y - ypix;
+        
+        if(yDiff < 0){
+            for(int i = 1; i <= 15; i++){
+                y += i;
+                try {
+                    Thread.sleep(50);
+                } catch (InterruptedException ex) {
+                    ex.printStackTrace();
+                }
+            }
+        }
+        if(yDiff > 0){
+            for(int i = 1; i <= 15; i++){
+                y -= i;
+                try {
+                    Thread.sleep(50);
+                } catch (InterruptedException ex) {
+                    ex.printStackTrace();
+                }
+            }
+        }
     }
 
     @Override

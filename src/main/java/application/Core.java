@@ -33,12 +33,12 @@ public class Core {
         ISprite heros = new HerosSprite(h, labyrinthe);
         vue.add(heros);
         personnagesLaby.add(heros);
-        for (int i = 0; i < 1; i++) {
+        /*for (int i = 0; i < 10; i++) {
             IPersonnage m = new personnages.Monstre(labyrinthe.getSortie());
             ISprite monstre = new MonstreSprite(m, labyrinthe);
             vue.add(monstre);
             personnagesLaby.add(monstre);
-        }
+        }*/
     }
 
     protected void jeu(IVue vue) {
