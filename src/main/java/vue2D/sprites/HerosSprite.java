@@ -49,22 +49,18 @@ public class HerosSprite extends ASprite implements EventHandler<KeyEvent> {
         switch (event.getCode()) {
             case LEFT:
                 x--;
-                // heros.salleChoisie = new Salle(sprite.getPosition().getX() - 1, sprite.getPosition().getY());
                 spriteImg = leftSpriteImage;
                 break;
             case RIGHT:
                 x++;
-                //heros.salleChoisie = new Salle(sprite.getPosition().getX() + 1, sprite.getPosition().getY());
                 spriteImg = rightSpriteImage;
                 break;
             case UP:
                 y--;
-                //heros.salleChoisie = new Salle(sprite.getPosition().getX(), sprite.getPosition().getY() - 1);
                 spriteImg = upSpriteImage;
                 break;
             case DOWN:
                 y++;
-                //heros.salleChoisie = new Salle(sprite.getPosition().getX(), sprite.getPosition().getY() + 1);
                 spriteImg = downSpriteImage;
                 break;
         }
@@ -74,8 +70,5 @@ public class HerosSprite extends ASprite implements EventHandler<KeyEvent> {
               heros.salleChoisie = salle;  
             }
         }
-        
-        // heros.salleChoisie = new Salle(x, y);
-        // heros.faitSonChoix(labyrinthe.sallesAccessibles(heros));
     }
 }

@@ -105,3 +105,12 @@ J'ai recrée les classes des ```Monstres``` tout en essayant de mieux comprendre
 ## Séance 11 - 13/09/2021 (Matin)
 
 Nous avons trouvé la solution (grâce à l'aide de Mr. SOPENA) pour faire bouger le personnage et les monstres correctement. Cela nous a pris plus ou moins 3 séances durant lesquelles nous étions complétement bloqués.
+
+<br>
+
+---
+
+<br>
+
+## Séance 12 - 13/09/2021 (Après-midi)
+

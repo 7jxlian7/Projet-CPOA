@@ -1,6 +1,7 @@
 package application;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Collection;
 import labyrinthe.ILabyrinthe;
 import labyrinthe.ISalle;
@@ -16,8 +17,8 @@ import vue2D.sprites.MonstreSprite;
  * @author INFO Professors team
  */
 public class Core {
-    ISprite heros;
-    ISprite monstre;
+
+    ArrayList<ISprite> personnagesLaby = new ArrayList<>();
     ILabyrinthe labyrinthe;
 
     protected void initLabyrinthe() {
@@ -29,17 +30,21 @@ public class Core {
     protected void initSprites(IVue vue) {
         // creation du heros 
         IPersonnage h = new personnages.Heros(labyrinthe.getEntree());
-        this.heros = new HerosSprite(h, labyrinthe);
-        vue.add(this.heros);
-        IPersonnage m = new personnages.Monstre(labyrinthe.getSortie());
-        this.monstre = new MonstreSprite(m, labyrinthe);
-        vue.add(this.monstre);
+        ISprite heros = new HerosSprite(h, labyrinthe);
+        vue.add(heros);
+        personnagesLaby.add(heros);
+        for (int i = 0; i < 1; i++) {
+            IPersonnage m = new personnages.Monstre(labyrinthe.getSortie());
+            ISprite monstre = new MonstreSprite(m, labyrinthe);
+            vue.add(monstre);
+            personnagesLaby.add(monstre);
+        }
     }
 
     protected void jeu(IVue vue) {
         // boucle principale
         ISalle destination = null;
-        System.out.println("jeu");
+        ISprite heros = personnagesLaby.get(0);
         while (!labyrinthe.getSortie().equals(heros.getPosition())) {
             // choix et deplacement
             for (IPersonnage p : vue) {
@@ -70,7 +75,6 @@ public class Core {
         }
         System.out.println("Gagné!");
     }
-
 
     private void chargementLaby(String fic) {
         try {

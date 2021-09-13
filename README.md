@@ -44,3 +44,16 @@ Complete on 08/09/2021 - 21h02
 
 ## Niveau 15
 Complete on 08/09/2021 - 21h02
+
+## Niveau 16
+Complete on 13/09/2021 - 14h03
+
+## Niveau 17
+Complete on 13/09/2021 - 14h13
+
+## Niveau 18
+Complete on 13/09/2021 - 14h13
+
+## Niveau 19
+Complete on 13/09/2021 - 14h13
+
