@@ -114,3 +114,4 @@ Nous avons trouvé la solution (grâce à l'aide de Mr. SOPENA) pour faire bouge
 
 ## Séance 12 - 13/09/2021 (Après-midi)
 
+J'ai essayé d'implémenter le déplacement pixel par pixel mais je n'ai pas encore réussi.
