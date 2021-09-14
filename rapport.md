@@ -115,3 +115,13 @@ Nous avons trouvé la solution (grâce à l'aide de Mr. SOPENA) pour faire bouge
 ## Séance 12 - 13/09/2021 (Après-midi)
 
 J'ai essayé d'implémenter le déplacement pixel par pixel mais je n'ai pas encore réussi.
+
+<br>
+
+---
+
+<br>
+
+## Séance 13 - 14/09/2021 (Matin)
+
+Avancement au niveau de l'exercice 19, mais encore quelques problèmes pour faire bouger proprement et de manière fluide les sprites.
