@@ -43,30 +43,30 @@ public class HerosSprite extends ASprite implements EventHandler<KeyEvent> {
     @Override
     public void handle(KeyEvent event) {
 
-        int x = heros.getPosition().getX();
-        int y = heros.getPosition().getY();
+        int xPos = heros.getPosition().getX();
+        int yPos = heros.getPosition().getY();
         
         switch (event.getCode()) {
             case LEFT:
-                x--;
+                xPos--;
                 spriteImg = leftSpriteImage;
                 break;
             case RIGHT:
-                x++;
+                xPos++;
                 spriteImg = rightSpriteImage;
                 break;
             case UP:
-                y--;
+                yPos--;
                 spriteImg = upSpriteImage;
                 break;
             case DOWN:
-                y++;
+                yPos++;
                 spriteImg = downSpriteImage;
                 break;
         }
         
         for(ISalle salle : labyrinthe.sallesAccessibles(heros)){
-            if(salle.getX() == x && salle.getY() == y){
+            if(salle.getX() == xPos && salle.getY() == yPos){
               heros.salleChoisie = salle;  
             }
         }
