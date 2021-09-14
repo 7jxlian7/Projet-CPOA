@@ -4,14 +4,12 @@ import java.util.Collection;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
-import javafx.scene.paint.Color;
 import labyrinthe.ILabyrinthe;
 import labyrinthe.ISalle;
-import personnages.IPersonnage;
 import vue2D.sprites.ISprite;
 
 /**
- *
+ * Représente le dessin
  * @author INFO Professors team
  */
 public class Dessin extends Canvas {
@@ -26,6 +24,11 @@ public class Dessin extends Canvas {
     private Image entreeImage;
     private Image murImage;
 
+    /**
+     * Construis un dessin
+     * @param labyrinthe le labyrinthe du jeu
+     * @param sprites les sprites du jeu
+     */
     public Dessin(ILabyrinthe labyrinthe, Collection<ISprite> sprites) {
         this.sprites = sprites;
         this.labyrinthe = labyrinthe;
@@ -35,6 +38,9 @@ public class Dessin extends Canvas {
         chargementImages();
     }
 
+    /**
+     * Charge les images du jeu
+     */
     public void chargementImages() {
         solImage = new Image("file:icons/pyramide.jpg");
         sortieImage = new Image("file:icons/sortie.gif");
@@ -43,6 +49,9 @@ public class Dessin extends Canvas {
         murImage = new Image("file:icons/mur0.gif");
     }
 
+    /**
+     * Dessine le fond du labyrinthe (murs, salles, entrée et sortie)
+     */
     public void dessinFond() {
         tampon.drawImage(solImage, 0, 0, unite * labyrinthe.getLargeur(),
                 unite * labyrinthe.getHauteur());

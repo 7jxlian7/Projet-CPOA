@@ -7,7 +7,7 @@ import outils.Fichier;
 import personnages.IPersonnage;
 
 /**
- *
+ * Représente un labyrinthe.
  * @author INFO Professors team
  */
 public class Labyrinthe extends ArrayList<ISalle> implements ILabyrinthe {
@@ -17,6 +17,10 @@ public class Labyrinthe extends ArrayList<ISalle> implements ILabyrinthe {
     private int largeur;
     private int hauteur;
 
+    /**
+     * Créer un labyrinthe à partir d'un fichier.
+     * @param file le fichier texte contenant le labyrinthe
+    */
     @Override
     public void creerLabyrinthe(String file) {
         Fichier f;
@@ -51,6 +55,11 @@ public class Labyrinthe extends ArrayList<ISalle> implements ILabyrinthe {
         }
     }
 
+    /**
+     * Renvoie une collection de salles accessibles par le personnage passé en paramètre.
+     * @param bob le personnage à tester
+     * @return    une collection de salles accessibles
+     */
     @Override
     public Collection<ISalle> sallesAccessibles(IPersonnage bob) {
         ArrayList<ISalle> sallesAccessibles = new ArrayList<>();
@@ -62,26 +71,45 @@ public class Labyrinthe extends ArrayList<ISalle> implements ILabyrinthe {
         return sallesAccessibles;
     }
 
+    /**
+     * Renvoie l'entree du labyrinthe.
+     * @return l'entree du labyrinthe
+     */
     @Override
     public ISalle getEntree() {
         return entree;
     }
 
+    /**
+     * Renvoie la sortie du labyrinthe.
+     * @return la sortie du labyrinthe
+     */
     @Override
     public ISalle getSortie() {
         return sortie;
     }
 
+    /**
+     * Not implemented yet.
+     */
     @Override
     public Collection<ISalle> chemin(ISalle u, ISalle v) {
         return null;
     }
 
+     /**
+     * Renvoie la largeur du labyrinthe.
+     * @return la largeur du labyrinthe
+     */
     @Override
     public int getLargeur() {
         return largeur;
     }
 
+     /**
+     * Renvoie la hauteur du labyrinthe.
+     * @return la hauteur du labyrinthe
+     */
     @Override
     public int getHauteur() {
         return hauteur;

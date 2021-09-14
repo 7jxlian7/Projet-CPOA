@@ -1,7 +1,7 @@
 package labyrinthe;
 
 /**
- *
+ * Une interface pour une salle.
  * @author INFO Professors team
  */
 public interface ISalle {

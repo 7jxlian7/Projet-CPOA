@@ -1,11 +1,5 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package vue2D.sprites;
 
-import java.util.Collection;
 import javafx.event.EventHandler;
 import javafx.scene.image.Image;
 import javafx.scene.input.KeyEvent;
@@ -15,7 +9,7 @@ import personnages.Heros;
 import personnages.IPersonnage;
 
 /**
- *
+ * Représente le sprite d'un héros
  * @author Julian
  */
 public class HerosSprite extends ASprite implements EventHandler<KeyEvent> {
@@ -26,6 +20,11 @@ public class HerosSprite extends ASprite implements EventHandler<KeyEvent> {
     private Image downSpriteImage;
     private Image rightSpriteImage;
 
+    /**
+     * Construis le sprite d'un héros
+     * @param sprite le sprite
+     * @param laby le labyrinthe associé
+     */
     public HerosSprite(IPersonnage sprite, ILabyrinthe laby) {
         super(sprite, laby);
         chargementImagesSprite();
@@ -33,6 +32,9 @@ public class HerosSprite extends ASprite implements EventHandler<KeyEvent> {
         heros = (Heros) sprite;
     }
 
+    /**
+     * Charge les images liées au sprite
+     */
     public final void chargementImagesSprite() {
         leftSpriteImage = new Image("file:icons/link/LinkRunShieldL1.gif");
         upSpriteImage = new Image("file:icons/link/LinkRunU1.gif");
@@ -40,6 +42,10 @@ public class HerosSprite extends ASprite implements EventHandler<KeyEvent> {
         rightSpriteImage = new Image("file:icons/link/LinkRunR1.gif");
     }
 
+    /**
+     * Renvoie la salle choisie par la personnage en fonction des actions du clavier
+     * @param event evènement du clavier
+     */
     @Override
     public void handle(KeyEvent event) {
 

@@ -8,7 +8,7 @@ import vue2D.javafx.Vue;
 
 
 /**
- *
+ * Classe principale du projet permettant le lancement du jeu
  * @author INFO Professors team
  */
 public class MainJavaFX extends Application {

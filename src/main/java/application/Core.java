@@ -13,7 +13,7 @@ import vue2D.sprites.ISprite;
 import vue2D.sprites.MonstreSprite;
 
 /**
- *
+ * Classe permettant le déroulement du jeu 
  * @author INFO Professors team
  */
 public class Core {
@@ -21,12 +21,19 @@ public class Core {
     ArrayList<ISprite> personnagesLaby = new ArrayList<>();
     ILabyrinthe labyrinthe;
 
+    /**
+     * Initialise le labyrinthe
+     */
     protected void initLabyrinthe() {
         // creation du labyrinthe
         labyrinthe = new labyrinthe.Labyrinthe();
         chargementLaby("labys/level3.txt");
     }
 
+    /**
+     * Initialise les sprites du jeu
+     * @param vue la vue
+     */
     protected void initSprites(IVue vue) {
         // creation du heros 
         IPersonnage h = new personnages.Heros(labyrinthe.getEntree());
@@ -41,6 +48,10 @@ public class Core {
         }
     }
 
+    /**
+     *  Boucle principale du jeu
+     * @param vue la vue
+     */
     protected void jeu(IVue vue) {
         // boucle principale
         ISalle destination = null;
@@ -116,6 +127,10 @@ public class Core {
         System.out.println("Gagné!");
     }
 
+    /**
+     * Charge le labyrinthe
+     * @param fic le fichier texte contenant le labyrinthe
+     */
     private void chargementLaby(String fic) {
         try {
             labyrinthe.creerLabyrinthe(fic);
@@ -124,6 +139,10 @@ public class Core {
         }
     }
 
+    /**
+     * Temporise
+     * @param nb nombre de millisecondes à temporiser
+     */
     protected void temporisation(int nb) {
         try {
             Thread.sleep(nb); // pause de nb millisecondes

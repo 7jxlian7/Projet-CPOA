@@ -4,7 +4,7 @@ import java.util.Collection;
 import labyrinthe.ISalle;
 
 /**
-*
+* Une interface pour un personnage
 * @author INFO Professors team
 */
 public interface IPersonnage {

@@ -10,11 +10,16 @@ import labyrinthe.ILabyrinthe;
 import personnages.IPersonnage;
 
 /**
- *
+ * Représente le sprite d'un monstre
  * @author Julian
  */
 public class MonstreSprite extends ASprite {
 
+    /**
+     * Construis le sprite d'un monstre
+     * @param sprite le sprite
+     * @param laby le labyrinthe associé
+     */
     public MonstreSprite(IPersonnage sprite, ILabyrinthe laby) {
         super(sprite, laby);
         spriteImg = new Image("file:icons/monstre0.gif");

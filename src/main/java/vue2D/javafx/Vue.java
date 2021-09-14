@@ -9,7 +9,7 @@ import vue2D.AVue;
 import vue2D.sprites.ISprite;
 
 /**
- *
+ * Représente la vue
  * @author INFO Professors team
  */
 public class Vue extends AVue implements IVue {
@@ -18,6 +18,10 @@ public class Vue extends AVue implements IVue {
     ILabyrinthe labyrinthe;
     public Scene scene;
 
+    /**
+     * Construis la vue
+     * @param labyrinthe le labyrinthe du jeu
+     */
     public Vue(ILabyrinthe labyrinthe) {
         this.labyrinthe = labyrinthe;
         dessin = new Dessin(labyrinthe, this);
@@ -26,6 +30,9 @@ public class Vue extends AVue implements IVue {
         root.getChildren().add(dessin);
     }
 
+    /**
+     * Dessine la vue
+     */
     @Override
     public void dessiner() {
         // recopie du fond (image); murs + salles
@@ -35,6 +42,11 @@ public class Vue extends AVue implements IVue {
         });
     }
 
+    /**
+     * Associe un sprite aux contrôles du clavier
+     * @param sprite à controler
+     * @return true
+     */
     @Override
     public boolean add(ISprite sprite) {
         super.add(sprite);

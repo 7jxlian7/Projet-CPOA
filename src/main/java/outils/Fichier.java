@@ -6,13 +6,17 @@ import java.util.HashSet;
 import java.util.Scanner;
 
 /**
- *
+ * Représente un fichier
  * @author INFO Professors team
  */
 public class Fichier {
 
     Scanner sc = null;
 
+    /**
+     * Construis un fichier
+     * @param nomFichier nom du fichier à construire
+     */
     public Fichier(String nomFichier) {
         try {
             sc = new Scanner(new File(nomFichier));
@@ -21,8 +25,10 @@ public class Fichier {
         }
     }
 
-    // retourne le prochain entier dans le fichier
-    // retourne -1 s'il n'y en a pas
+    /**
+     * Lis un fichier
+     * @return le prochain entier du fichier, -1 si il n'y en a pas
+     */
     public int lireNombre() {
         if (sc.hasNextInt()) {
             return sc.nextInt();
@@ -30,6 +36,11 @@ public class Fichier {
         return -1;
     }
 
+    /**
+     * Vérifie si un fichier est valide (qu'il soit possible de créer un labyrinthe à partie de ce fichier)
+     * @param nomFichier nom du fichier à tester
+     * @return true ssi le fichier est valide
+     */
     public static boolean testValide(String nomFichier) {
         boolean isValid = true;
 

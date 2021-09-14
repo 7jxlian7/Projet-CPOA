@@ -4,7 +4,7 @@ import javafx.scene.canvas.GraphicsContext;
 import personnages.IPersonnage;
 
 /**
-*
+* Une interface pour un sprite
 * @author INFO Professors team
 */
 public interface ISprite extends IPersonnage{
