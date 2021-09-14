@@ -49,7 +49,7 @@ public class Core {
     }
 
     /**
-     *  Boucle principale du jeu
+     * Boucle principale du jeu
      * @param vue la vue
      */
     protected void jeu(IVue vue) {

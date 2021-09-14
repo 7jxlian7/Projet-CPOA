@@ -125,3 +125,13 @@ J'ai essayé d'implémenter le déplacement pixel par pixel mais je n'ai pas enc
 ## Séance 13 - 14/09/2021 (Matin)
 
 Avancement au niveau de l'exercice 19, mais encore quelques problèmes pour faire bouger proprement et de manière fluide les sprites.
+
+<br>
+
+---
+
+<br>
+
+## Séance 14 - 14/09/2021 (Après-midi)
+
+Recherche au niveau de l'exercice 19, petit blocage malgré tout car je n'utilise pas réellement la bonne méthode pour que le personnage bouge de manière fluide. Documentation du code déjà présent.
