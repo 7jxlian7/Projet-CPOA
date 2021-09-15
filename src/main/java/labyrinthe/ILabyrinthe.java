@@ -10,7 +10,7 @@ import personnages.IPersonnage;
  */
 public interface ILabyrinthe extends Collection<ISalle> {
 
-    public void creerLabyrinthe(String file) throws IOException; // cree le labyrinthe a partir d'un fichier 
+    public void creerLabyrinthe(String file) throws IOException; // creer le labyrinthe a partir d'un fichier 
 
     public Collection<ISalle> sallesAccessibles(IPersonnage heros); // renvoie les salles accessibles pour le heros
 

@@ -10,6 +10,7 @@ import personnages.IPersonnage;
 
 /**
  * Représente le sprite d'un héros
+ *
  * @author Julian
  */
 public class HerosSprite extends ASprite implements EventHandler<KeyEvent> {
@@ -21,7 +22,8 @@ public class HerosSprite extends ASprite implements EventHandler<KeyEvent> {
     private Image rightSpriteImage;
 
     /**
-     * Construis le sprite d'un héros
+     * Construit le sprite d'un héros
+     *
      * @param sprite le sprite
      * @param laby le labyrinthe associé
      */
@@ -43,37 +45,42 @@ public class HerosSprite extends ASprite implements EventHandler<KeyEvent> {
     }
 
     /**
-     * Renvoie la salle choisie par la personnage en fonction des actions du clavier
+     * Renvoie la salle choisie par la personnage en fonction des actions du
+     * clavier
+     *
      * @param event evènement du clavier
      */
     @Override
     public void handle(KeyEvent event) {
 
-        int xPos = heros.getPosition().getX();
-        int yPos = heros.getPosition().getY();
-        
-        switch (event.getCode()) {
-            case LEFT:
-                xPos--;
-                spriteImg = leftSpriteImage;
-                break;
-            case RIGHT:
-                xPos++;
-                spriteImg = rightSpriteImage;
-                break;
-            case UP:
-                yPos--;
-                spriteImg = upSpriteImage;
-                break;
-            case DOWN:
-                yPos++;
-                spriteImg = downSpriteImage;
-                break;
-        }
-        
-        for(ISalle salle : labyrinthe.sallesAccessibles(heros)){
-            if(salle.getX() == xPos && salle.getY() == yPos){
-              heros.salleChoisie = salle;  
+        if (!this.seDeplace) {
+
+            int xPos = heros.getPosition().getX();
+            int yPos = heros.getPosition().getY();
+
+            switch (event.getCode()) {
+                case LEFT:
+                    xPos--;
+                    spriteImg = leftSpriteImage;
+                    break;
+                case RIGHT:
+                    xPos++;
+                    spriteImg = rightSpriteImage;
+                    break;
+                case UP:
+                    yPos--;
+                    spriteImg = upSpriteImage;
+                    break;
+                case DOWN:
+                    yPos++;
+                    spriteImg = downSpriteImage;
+                    break;
+            }
+
+            for (ISalle salle : labyrinthe.sallesAccessibles(heros)) {
+                if (salle.getX() == xPos && salle.getY() == yPos) {
+                    heros.salleChoisie = salle;
+                }
             }
         }
     }

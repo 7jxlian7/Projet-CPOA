@@ -17,7 +17,7 @@ public class Heros extends APersonnage {
     public ISalle salleChoisie;
     
     /**
-     * Construis un héros
+     * Construit un héros
      * @param salle salle de départ du héros
      */
     public Heros(ISalle salle) {

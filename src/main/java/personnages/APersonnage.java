@@ -20,7 +20,7 @@ public abstract class APersonnage implements IPersonnage {
     }
     
     /**
-     * Définis la position du personnage
+     * Définit la position du personnage
      * @param s la salle où va se placer le personnage
      */
     @Override

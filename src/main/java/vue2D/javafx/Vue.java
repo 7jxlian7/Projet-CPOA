@@ -19,7 +19,7 @@ public class Vue extends AVue implements IVue {
     public Scene scene;
 
     /**
-     * Construis la vue
+     * Construit la vue
      * @param labyrinthe le labyrinthe du jeu
      */
     public Vue(ILabyrinthe labyrinthe) {

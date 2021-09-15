@@ -25,6 +25,7 @@ public abstract class ASprite implements ISprite {
     public int unite = 15;
     int x = 0;
     int y = 0;
+    boolean seDeplace;
 
     /**
      * Construis un modèle de sprite
@@ -34,8 +35,7 @@ public abstract class ASprite implements ISprite {
     public ASprite(IPersonnage sprite, ILabyrinthe laby) {
         this.labyrinthe = laby;
         this.sprite = sprite;
-        x = sprite.getPosition().getX() * unite;
-        y = sprite.getPosition().getY() * unite;
+        this.setCoordonnees(sprite.getPosition().getX() * unite, sprite.getPosition().getY() * unite);
     }
 
     /**
@@ -44,18 +44,48 @@ public abstract class ASprite implements ISprite {
      */
     @Override
     public void dessiner(GraphicsContext g) {
+        
+        seDeplace = false;
+        
+        // Récuperation des nouvelles coordonnées
+        int newX = sprite.getPosition().getX() * unite;
+        int newY = sprite.getPosition().getY() * unite;
+        
+        // Calcul de la direction
+        int xDiff = x - newX;
+        int yDiff = y - newY;
+        
+        if(xDiff < 0){
+            seDeplace = true;
+            x++;
+        }
+        if(xDiff > 0){
+            seDeplace = true;
+            x--;
+        }
+        if(yDiff < 0){
+            seDeplace = true;
+            y++;
+        }
+        if(yDiff > 0){
+            seDeplace = true;
+            y--;
+        }
+        if(xDiff == 0 && yDiff == 0){
+            seDeplace = false;
+        }
         g.drawImage(spriteImg, x, y - (spriteImg.getHeight() / 2));
     }
 
     /**
-     * Définis les coordonnées du sprite
+     * Définit les coordonnées graphiques du sprite
      * @param xpix coordonnées honrizontales
      * @param ypix coordonées verticales
      */
     @Override
     public void setCoordonnees(int xpix, int ypix) {
-        x += xpix;
-        y += ypix;
+        x = xpix;
+        y = ypix;
     }
 
     /**
@@ -68,7 +98,7 @@ public abstract class ASprite implements ISprite {
     }
 
     /**
-     * Définis la position du sprite
+     * Définit la position du sprite
      * @param s la salle où le sprite va se positionner
      */
     @Override

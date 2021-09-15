@@ -6,7 +6,7 @@ package labyrinthe;
  */
 public interface ISalle {
 
-    public int getX(); // abcisse
+    public int getX(); // abscisse
 
     public int getY(); // ordonnee
 

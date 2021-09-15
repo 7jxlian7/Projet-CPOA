@@ -25,7 +25,7 @@ public class Dessin extends Canvas {
     private Image murImage;
 
     /**
-     * Construis un dessin
+     * Construit un dessin
      * @param labyrinthe le labyrinthe du jeu
      * @param sprites les sprites du jeu
      */

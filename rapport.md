@@ -135,3 +135,13 @@ Avancement au niveau de l'exercice 19, mais encore quelques problèmes pour fair
 ## Séance 14 - 14/09/2021 (Après-midi)
 
 Recherche au niveau de l'exercice 19, petit blocage malgré tout car je n'utilise pas réellement la bonne méthode pour que le personnage bouge de manière fluide. Documentation du code déjà présent.
+
+<br>
+
+---
+
+<br>
+
+## Séance 15 - 15/09/2021 (Après-midi)
+
+Niveau 19 terminé.

@@ -49,7 +49,7 @@ public class Salle implements ISalle {
     }
 
     /**
-     * Redéfinis la méthode hashcode
+     * Redéfinit la méthode hashcode
      * @return le hashcode
      */
     @Override
@@ -61,7 +61,7 @@ public class Salle implements ISalle {
     }
 
     /**
-     * Redéfinis la méthode equals
+     * Redéfinit la méthode equals
      * @return true ssi les deux salles ont les mêmes coordonées
      */
     @Override

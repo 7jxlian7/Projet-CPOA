@@ -13,7 +13,7 @@ public class Monstre extends APersonnage {
     Random random = new Random();
     
     /**
-     * Construis un monstre
+     * Construit un monstre
      * @param salle salle de départ du monstre
      */
     public Monstre(ISalle salle) {

@@ -14,7 +14,7 @@ public class Fichier {
     Scanner sc = null;
 
     /**
-     * Construis un fichier
+     * Construit un fichier
      * @param nomFichier nom du fichier à construire
      */
     public Fichier(String nomFichier) {
@@ -26,7 +26,7 @@ public class Fichier {
     }
 
     /**
-     * Lis un fichier
+     * Lit un fichier
      * @return le prochain entier du fichier, -1 si il n'y en a pas
      */
     public int lireNombre() {

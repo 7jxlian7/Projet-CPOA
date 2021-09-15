@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import java.util.Collection;
 import labyrinthe.ILabyrinthe;
 import labyrinthe.ISalle;
-import labyrinthe.Salle;
 import personnages.IPersonnage;
 import vue2D.IVue;
 import vue2D.sprites.HerosSprite;
@@ -31,7 +30,7 @@ public class Core {
     }
 
     /**
-     * Initialise les sprites du jeu
+     * Initialise les sprites et personnages du jeu
      * @param vue la vue
      */
     protected void initSprites(IVue vue) {
@@ -40,7 +39,9 @@ public class Core {
         ISprite heros = new HerosSprite(h, labyrinthe);
         vue.add(heros);
         personnagesLaby.add(heros);
-        for (int i = 0; i < 10; i++) {
+        // creation de monstres
+        int nbMonstres = 10;
+        for (int i = 0; i < nbMonstres; i++) {
             IPersonnage m = new personnages.Monstre(labyrinthe.getSortie());
             ISprite monstre = new MonstreSprite(m, labyrinthe);
             vue.add(monstre);
@@ -56,52 +57,14 @@ public class Core {
         // boucle principale
         ISalle destination = null;
         ISprite heros = personnagesLaby.get(0);
-        int nbTour = 0;
         while (!labyrinthe.getSortie().equals(heros.getPosition())) {
             // choix et deplacement
             for (IPersonnage p : vue) {
-                ISprite p2 = (ISprite) p;
-                boolean isMoving = false;
                 Collection<ISalle> sallesAccessibles = labyrinthe.sallesAccessibles(p);
-                    destination = p.faitSonChoix(sallesAccessibles); // on demande au personnage de faire son choix de salle
-                    // deplacement
-                // Si le personnage va bouger
-                if(!destination.equals(p.getPosition())){
-                   isMoving = true; 
-                }
-                // Si mon héros n'est pas à sa destination (est en mouvement)
-                if(isMoving){
-                    // Retourne la différence entre la position du joueur et sa destination (en salle)
-                    int xDiff = p.getPosition().getX() - destination.getX();
-                    int yDiff = p.getPosition().getY() - destination.getY();
-                         
-                    // Si on va vers le BAS
-                    if(yDiff < 0){
-                        p2.setCoordonnees(0, 1);
-                        nbTour++;
-                    }
-                    // Si on va vers le HAUT
-                    if(yDiff > 0){
-                        p2.setCoordonnees(0, -1);
-                        nbTour++;
-                    }
-                    // Si on va vers la GAUCHE
-                    if(xDiff > 0){
-                        p2.setCoordonnees(-1, 0);
-                        nbTour++;
-                    }
-                    // Si on va vers la DROITE
-                    if(xDiff < 0){
-                        p2.setCoordonnees(1, 0);
-                        nbTour++;
-                    }
-                    
-                    if(nbTour >= 15){
-                        isMoving = false;
-                        p.setPosition(destination);
-                        nbTour = 0;
-                    }
-                }
+                destination = p.faitSonChoix(sallesAccessibles); // on demande au personnage de faire son choix de salle
+                 // deplacement
+                 p.setPosition(destination);
+
             }
             // detection des collisions
             boolean collision = false;
@@ -147,6 +110,6 @@ public class Core {
         try {
             Thread.sleep(nb); // pause de nb millisecondes
         } catch (InterruptedException ie) {
-        };
+        }
     }
 }

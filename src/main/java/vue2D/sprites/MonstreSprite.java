@@ -16,7 +16,7 @@ import personnages.IPersonnage;
 public class MonstreSprite extends ASprite {
 
     /**
-     * Construis le sprite d'un monstre
+     * Construit le sprite d'un monstre
      * @param sprite le sprite
      * @param laby le labyrinthe associé
      */
