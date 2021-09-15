@@ -65,6 +65,3 @@ Complete on 15/09/2021 - 15h30
 
 ## Niveau 22
 Complete on 15/09/2021 - 15h32
-
-## Niveau 23
-Complete on 15/09/2021 - 15h37
