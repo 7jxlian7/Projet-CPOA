@@ -144,4 +144,4 @@ Recherche au niveau de l'exercice 19, petit blocage malgré tout car je n'utilis
 
 ## Séance 15 - 15/09/2021 (Après-midi)
 
-Niveau 19 terminé.
+Niveau 19, 20, 21 et 22 terminés sans difficultés majeures.
