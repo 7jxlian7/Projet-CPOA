@@ -3,6 +3,7 @@ package vue2D.javafx;
 import java.util.Collection;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.effect.BoxBlur;
 import javafx.scene.image.Image;
 import labyrinthe.ILabyrinthe;
 import labyrinthe.ISalle;
@@ -52,20 +53,28 @@ public class Dessin extends Canvas {
     /**
      * Dessine le fond du labyrinthe (murs, salles, entrée et sortie)
      */
-    public void dessinFond() {
+    public void dessinFond() {        
         tampon.drawImage(solImage, 0, 0, unite * labyrinthe.getLargeur(),
                 unite * labyrinthe.getHauteur());
 
         // Dessine les murs (partout pour le moment)
-        for (int i = 0; i < labyrinthe.getLargeur(); i++) {
+        /*for (int i = 0; i < labyrinthe.getLargeur(); i++) {
             for (int j = 0; j < labyrinthe.getHauteur(); j++) {
                 tampon.drawImage(murImage, i * unite, j * unite);
             }
-        }
+        }*/
 
         // Dessine les salles
+        ISprite heros = (ISprite) sprites.toArray()[0];
+        int xHeros = heros.getPosition().getX();
+        int yHeros = heros.getPosition().getY();
+        int porteeVue = 5;
         for (ISalle salle : labyrinthe) {
-            tampon.drawImage(salleImage, salle.getX() * unite, salle.getY() * unite);
+            
+            if(salle.getX()+porteeVue > xHeros && salle.getY()+porteeVue > yHeros && salle.getX()-porteeVue < xHeros && salle.getY()-porteeVue < yHeros){
+                tampon.drawImage(salleImage, salle.getX() * unite, salle.getY() * unite);
+            }
+            
         };
 
         // Dessine l'entree

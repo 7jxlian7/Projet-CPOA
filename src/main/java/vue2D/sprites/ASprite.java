@@ -74,7 +74,7 @@ public abstract class ASprite implements ISprite {
         if(xDiff == 0 && yDiff == 0){
             seDeplace = false;
         }
-        g.drawImage(spriteImg, x, y - (spriteImg.getHeight() / 2));
+        g.drawImage(spriteImg, x, y-(spriteImg.getHeight()/2), unite, unite*1.5);
     }
 
     /**
