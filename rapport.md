@@ -145,3 +145,13 @@ Recherche au niveau de l'exercice 19, petit blocage malgré tout car je n'utilis
 ## Séance 15 - 15/09/2021 (Après-midi)
 
 Niveau 19, 20, 21 et 22 terminés sans difficultés majeures.
+
+<br>
+
+---
+
+<br>
+
+## Séance 16 - 15/09/2021 (Soirée)
+
+Niveau 23 et 24 terminés. Pas vraiment de problème rencontré. Cela m'a pris un peu de temps car j'ai dû consulter la documentation de ```JGraphT``` afin de pouvoir créer un graphe, ajouter les sommets, les arrêtes et trouver le chemin le plus court de ce dernier.
