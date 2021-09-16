@@ -165,3 +165,13 @@ Niveau 23 et 24 terminés. Pas vraiment de problème rencontré. Cela m'a pris u
 ## Séance 17 - 16/09/2021 (Matin)
 
 J'ai bien avancé le niveau 26. L'implémentation de mon booléen ```seDeplace``` m'a posé quelques problèmes.
+
+<br>
+
+---
+
+<br>
+
+## Séance 18 - 16/09/2021 (Soirée)
+
+J'ai complété le diagramme de classes cet après-midi, puis plus tard dans la soirée, j'ai terminé le niveau 26 en revoyant ma méthode ```setCoordonnees()```.
