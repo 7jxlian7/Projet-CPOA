@@ -19,6 +19,8 @@ public interface ILabyrinthe extends Collection<ISalle> {
     public ISalle getSortie(); // accesseur sur la sortie
 
     public Collection<ISalle> chemin(ISalle u, ISalle v); // un plus court chemin entre u et v
+    
+    public int distanceGraphe(ISalle s, ISalle t);
 
     // dimensions grille
     public int getLargeur();

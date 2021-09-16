@@ -1,0 +1,61 @@
+<diagram program="umletino" version="14.3.0"><zoom_level>10</zoom_level><element><id>UMLPackage</id><coordinates><x>10</x><y>240</y><w>430</w><h>390</h></coordinates><panel_attributes>labyrinthe
+--
+bg=red</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLPackage</id><coordinates><x>420</x><y>790</y><w>360</w><h>150</h></coordinates><panel_attributes>personnages
+--
+bg=blue</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>20</x><y>270</y><w>240</w><h>100</h></coordinates><panel_attributes>&lt;&lt;interface&gt;&gt;
+ISalle
+--
+--
++ getX(): int
++ getY(): int
++ estAdjacente(autre: ISalle): boolean
+bg=#FFFFFF</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>430</x><y>830</y><w>340</w><h>100</h></coordinates><panel_attributes>&lt;&lt;interface&gt;&gt;
+IPersonnage
+--
+--
++ faitSonChoix(sallesAccessibles: Collection&lt;ISalle&gt;): ISalle
++ getPosition(): ISalle
++ setPosition(s: ISalle)
+bg=#FFFFFF</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>20</x><y>460</y><w>350</w><h>160</h></coordinates><panel_attributes>&lt;&lt;interface&gt;&gt;
+ILabyrinthe
+--
+--
++ creerLabyrinthe(file: String)
++ sallesAccessibles(heros: IPersonnage): Collection&lt;ISalle&gt; 
++ getEntree(): ISalle
++ getSortie(): ISalle
++ chemin(u: ISalle, v: ISalle): Collection&lt;ISalle&gt;
++ getLargeur(): int
++ getHauteur(): int
+bg=#FFFFFF</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLPackage</id><coordinates><x>10</x><y>690</y><w>340</w><h>250</h></coordinates><panel_attributes>vue2D
+--
+bg=orange</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>260</x><y>720</y><w>80</w><h>60</h></coordinates><panel_attributes>&lt;&lt;interface&gt;&gt;
+IVue
+--
+--
++ dessiner()
+bg=#FFFFFF</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLPackage</id><coordinates><x>40</x><y>810</y><w>230</w><h>120</h></coordinates><panel_attributes>sprites
+--
+bg=#FFFFFF</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>50</x><y>840</y><w>210</w><h>80</h></coordinates><panel_attributes>&lt;&lt;interface&gt;&gt;
+ISprite
+--
+--
++ dessiner(g: GraphicsContext)
++ setCoordonnees(xpix: int, ypix: int)
+bg=#FFFFFF</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLPackage</id><coordinates><x>580</x><y>430</y><w>190</w><h>200</h></coordinates><panel_attributes>application
+--
+bg=green</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>590</x><y>470</y><w>170</w><h>110</h></coordinates><panel_attributes>Core
+--
+--
+# initLabyrinthe()
+# initSprites(vue: IVue)
+# jeu(vue: IVue)
+- chargementLaby(fic: String)
+# temporisation(nb: int)
+bg=#FFFFFF</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>180</x><y>360</y><w>300</w><h>120</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>280;10;120;10;120;80;10;80;10;100</additional_attributes></element><element><id>Relation</id><coordinates><x>250</x><y>570</y><w>430</w><h>340</h></coordinates><panel_attributes>lt=&lt;-
+heros
+m1=1     </panel_attributes><additional_attributes>10;310;120;310;120;80;410;80;410;10</additional_attributes></element><element><id>Relation</id><coordinates><x>360</x><y>520</y><w>250</w><h>50</h></coordinates><panel_attributes>lt=&lt;-
+labyrinthe
+m1=1</panel_attributes><additional_attributes>10;20;230;20</additional_attributes></element><element><id>Relation</id><coordinates><x>330</x><y>720</y><w>110</w><h>40</h></coordinates><panel_attributes>lt=&lt;&lt;-
+               </panel_attributes><additional_attributes>90;20;10;20</additional_attributes></element><element><id>Relation</id><coordinates><x>250</x><y>880</y><w>200</w><h>40</h></coordinates><panel_attributes>lt=&lt;&lt;-
+  </panel_attributes><additional_attributes>180;20;10;20</additional_attributes></element><element><id>UMLClass</id><coordinates><x>420</x><y>720</y><w>140</w><h>30</h></coordinates><panel_attributes>Collection&lt;ISprite&gt;</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>460</x><y>350</y><w>140</w><h>30</h></coordinates><panel_attributes>Collection&lt;ISalle&gt;</panel_attributes><additional_attributes></additional_attributes></element></diagram>

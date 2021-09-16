@@ -15,7 +15,7 @@ import personnages.IPersonnage;
  */
 public class HerosSprite extends ASprite implements EventHandler<KeyEvent> {
 
-    Heros heros;
+    private Heros heros;
     private Image leftSpriteImage;
     private Image upSpriteImage;
     private Image downSpriteImage;

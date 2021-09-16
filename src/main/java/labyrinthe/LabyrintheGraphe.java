@@ -6,7 +6,6 @@
 package labyrinthe;
 
 import exceptions.ExceptionInvalidFile;
-import java.util.ArrayList;
 import java.util.Collection;
 import org.jgrapht.GraphPath;
 import org.jgrapht.alg.shortestpath.DijkstraShortestPath;
@@ -107,6 +106,12 @@ public class LabyrintheGraphe extends Labyrinthe implements ILabyrinthe {
         DijkstraShortestPath<ISalle, DefaultEdge> dsp = new DijkstraShortestPath<ISalle, DefaultEdge>(graphe);
         GraphPath<ISalle, DefaultEdge> path = dsp.getPath(u, v);
         return path.getVertexList();
+    }
+    
+    @Override
+    public int distanceGraphe(ISalle s, ISalle t){
+        DijkstraShortestPath<ISalle, DefaultEdge> dsp = new DijkstraShortestPath<ISalle, DefaultEdge>(graphe);
+        return dsp.getPath(s, t).getLength();
     }
 
     /**

@@ -20,7 +20,7 @@ public class Dessin extends Canvas {
     private Collection<ISprite> sprites;
     private ILabyrinthe labyrinthe;
     private int unite = 15;
-    private int porteeVue = 5;
+    private int porteeVue = 10;
     private GraphicsContext tampon;
     private Image solImage;
     private Image salleImage;
@@ -66,8 +66,9 @@ public class Dessin extends Canvas {
 
     public void dessinSalles() {
         // Dessine les salles
+        ISprite heros = (ISprite) sprites.toArray()[0];
         for (ISalle salle : labyrinthe) {
-            if (estVisible(salle)) {
+            if (labyrinthe.distanceGraphe(salle, heros.getPosition()) < porteeVue) {
                 tampon.drawImage(salleImage, salle.getX() * unite, salle.getY() * unite);
             }
         };
@@ -92,15 +93,5 @@ public class Dessin extends Canvas {
         for (ISalle s : listeSalles) {
             tampon.fillRect(s.getX() * unite, s.getY() * unite, unite, unite);
         }
-    }
-
-    public boolean estVisible(ISalle s) {
-        // Récupération du héros
-        ISprite heros = (ISprite) sprites.toArray()[0];
-        // Récupération de ses coordonnées
-        int xHeros = heros.getPosition().getX();
-        int yHeros = heros.getPosition().getY();
-
-        return s.getX() + porteeVue > xHeros && s.getY() + porteeVue > yHeros && s.getX() - porteeVue < xHeros && s.getY() - porteeVue < yHeros;
     }
 }

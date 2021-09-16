@@ -1,0 +1,128 @@
+<diagram program="umletino" version="14.4.0-SNAPSHOT"><zoom_level>10</zoom_level><element><id>UMLPackage</id><coordinates><x>200</x><y>0</y><w>430</w><h>600</h></coordinates><panel_attributes>labyrinthe
+--
+bg=red</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLPackage</id><coordinates><x>670</x><y>760</y><w>360</w><h>150</h></coordinates><panel_attributes>personnages
+--
+bg=blue</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>210</x><y>240</y><w>240</w><h>100</h></coordinates><panel_attributes>&lt;&lt;interface&gt;&gt;
+ISalle
+--
+--
++ getX(): int
++ getY(): int
++ estAdjacente(autre: ISalle): boolean
+bg=#FFFFFF</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>680</x><y>800</y><w>340</w><h>100</h></coordinates><panel_attributes>&lt;&lt;interface&gt;&gt;
+IPersonnage
+--
+--
++ faitSonChoix(sallesAccessibles: Collection&lt;ISalle&gt;): ISalle
++ getPosition(): ISalle
++ setPosition(s: ISalle)
+bg=#FFFFFF
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>210</x><y>430</y><w>350</w><h>160</h></coordinates><panel_attributes>&lt;&lt;interface&gt;&gt;
+ILabyrinthe
+--
+--
++ creerLabyrinthe(file: String): void
++ sallesAccessibles(heros: IPersonnage): Collection&lt;ISalle&gt; 
++ getEntree(): ISalle
++ getSortie(): ISalle
++ chemin(u: ISalle, v: ISalle): Collection&lt;ISalle&gt;
++ getLargeur(): int
++ getHauteur(): int
+bg=#FFFFFF</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLPackage</id><coordinates><x>200</x><y>660</y><w>410</w><h>710</h></coordinates><panel_attributes>vue2D
+--
+bg=orange</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>330</x><y>920</y><w>110</w><h>60</h></coordinates><panel_attributes>&lt;&lt;interface&gt;&gt;
+IVue
+--
+--
++ dessiner(): void
+bg=#FFFFFF</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLPackage</id><coordinates><x>230</x><y>780</y><w>320</w><h>120</h></coordinates><panel_attributes>sprites
+--
+bg=#FFFFFF</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>240</x><y>810</y><w>290</w><h>80</h></coordinates><panel_attributes>&lt;&lt;interface&gt;&gt;
+ISprite
+--
+--
++ dessiner(g: GraphicsContext): void
++ setCoordonnees(xpix: int, ypix: int): void
+bg=#FFFFFF</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLPackage</id><coordinates><x>770</x><y>400</y><w>220</w><h>310</h></coordinates><panel_attributes>application
+--
+bg=green</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>780</x><y>440</y><w>200</w><h>140</h></coordinates><panel_attributes>Core
+--
+--
+# initLabyrinthe(): void
+# initSprites(vue: IVue): void
+# jeu(vue: IVue): void
+- chargementLaby(fic: String): void
+# temporisation(nb: int): void
+bg=#FFFFFF
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>370</x><y>330</y><w>300</w><h>120</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>280;10;230;10;230;70;10;70;10;100</additional_attributes></element><element><id>Relation</id><coordinates><x>520</x><y>550</y><w>280</w><h>330</h></coordinates><panel_attributes>lt=&lt;-
+heros           
+m1=   1</panel_attributes><additional_attributes>10;300;110;300;110;120;200;120;200;10;260;10</additional_attributes></element><element><id>Relation</id><coordinates><x>550</x><y>490</y><w>250</w><h>50</h></coordinates><panel_attributes>lt=&lt;-
+   labyrinthe
+m1=1</panel_attributes><additional_attributes>10;20;230;20</additional_attributes></element><element><id>Relation</id><coordinates><x>210</x><y>350</y><w>700</w><h>620</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>678;10;680;30;430;30;430;270;370;270;370;360;10;360;10;600;120;600</additional_attributes></element><element><id>Relation</id><coordinates><x>520</x><y>850</y><w>180</w><h>40</h></coordinates><panel_attributes>lt=&lt;&lt;-
+  </panel_attributes><additional_attributes>160;20;10;20</additional_attributes></element><element><id>UMLClass</id><coordinates><x>780</x><y>620</y><w>200</w><h>70</h></coordinates><panel_attributes>MainJavaFX
+--
+--
++ start(stage: Stage): void
+_+ main(args String[]): void_
+bg=#FFFFFF
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>210</x><y>30</y><w>340</w><h>190</h></coordinates><panel_attributes>Labyrinthe
+--
+- largeur: int
+- hauteur: int
+--
++ creerLabyrinthe(file: String)
++ sallesAccessibles(IPersonnage bob): Collection&lt;ISalle&gt;
++ getEntree(): ISalle
++ getSortie(): ISalle
++ chemin(u: ISalle, v: ISalle): Collection&lt;ISalle&gt;
++ getLargeur(): int
++ getHauteur(): int
+bg=#FFFFFF
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLPackage</id><coordinates><x>660</x><y>0</y><w>210</w><h>120</h></coordinates><panel_attributes>outils
+--
+bg=yellow</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>670</x><y>30</y><w>190</w><h>80</h></coordinates><panel_attributes>Fichier
+--
+--
++ Fichier(nomFichier: String): void
++ lireNombre(): int
+bg=#FFFFFF</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>210</x><y>1310</y><w>100</w><h>40</h></coordinates><panel_attributes>&lt;&lt;abstract&gt;&gt;
+/AVue/
+bg=#FFFFFF</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLPackage</id><coordinates><x>210</x><y>1020</y><w>390</w><h>270</h></coordinates><panel_attributes>javafx
+--
+bg=#FFFFFF</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>220</x><y>1050</y><w>370</w><h>140</h></coordinates><panel_attributes>Dessin
+--
+- unite: int
+--
++ Dessin(labyrinthe: ILabyrinthe, sprites: Collection&lt;ISprite&gt;): void
++ chargementImages(): void
++ dessinFond(): void
+bg=#FFFFFF
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>220</x><y>1200</y><w>200</w><h>80</h></coordinates><panel_attributes>Vue
+--
++ scene: Scene
+--
++ Vue(labyrinthe: ILabyrinthe): void
++ dessiner(): void
+bg=#FFFFFF</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>370</x><y>970</y><w>290</w><h>290</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>10;10;10;40;270;40;270;270;50;270</additional_attributes></element><element><id>UMLClass</id><coordinates><x>670</x><y>960</y><w>130</w><h>30</h></coordinates><panel_attributes>GraphicsContext</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>670</x><y>1040</y><w>130</w><h>30</h></coordinates><panel_attributes>Canvas</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>580</x><y>1050</y><w>110</w><h>30</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;90;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>830</x><y>330</y><w>130</w><h>30</h></coordinates><panel_attributes>Collection&lt;ISprite&gt;</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>650</x><y>250</y><w>130</w><h>30</h></coordinates><panel_attributes>ArrayList&lt;ISalle&gt;</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>540</x><y>140</y><w>190</w><h>130</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>170;110;170;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>310</x><y>210</y><w>200</w><h>240</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>10;220;10;150;180;150;180;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>830</x><y>250</y><w>130</w><h>30</h></coordinates><panel_attributes>Scanner</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>750</x><y>110</y><w>170</w><h>160</h></coordinates><panel_attributes>lt=&lt;-
+sc
+m1=1</panel_attributes><additional_attributes>140;140;140;40;10;40;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>1030</x><y>630</y><w>140</w><h>50</h></coordinates><panel_attributes>Application
+--
+/+ start(Stage arg0): void/</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>970</x><y>650</y><w>80</w><h>30</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>60;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>870</x><y>570</y><w>80</w><h>70</h></coordinates><panel_attributes>lt=&lt;-
+         core
+m1=1..1</panel_attributes><additional_attributes>10;10;10;50</additional_attributes></element><element><id>UMLClass</id><coordinates><x>650</x><y>330</y><w>130</w><h>30</h></coordinates><panel_attributes>Collection&lt;ISalle&gt;</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>670</x><y>1000</y><w>130</w><h>30</h></coordinates><panel_attributes>ArrayList&lt;ISprite&gt;</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>300</x><y>1010</y><w>550</w><h>330</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>500;10;530;10;530;310;10;310</additional_attributes></element><element><id>Relation</id><coordinates><x>250</x><y>970</y><w>430</w><h>360</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>150;10;150;30;410;30;410;330;10;330;10;340</additional_attributes></element><element><id>Relation</id><coordinates><x>230</x><y>1270</y><w>30</w><h>60</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;40;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>580</x><y>330</y><w>680</w><h>870</h></coordinates><panel_attributes>lt=&lt;-
+sprites
+m1=0..n</panel_attributes><additional_attributes>380;10;630;10;630;850;10;850</additional_attributes></element><element><id>Relation</id><coordinates><x>200</x><y>580</y><w>210</w><h>490</h></coordinates><panel_attributes>lt=&lt;-
+labyrinthe
+m1=1</panel_attributes><additional_attributes>180;10;180;110;10;110;10;430;170;430;170;450;180;450;180;470</additional_attributes></element><element><id>Relation</id><coordinates><x>480</x><y>960</y><w>210</w><h>110</h></coordinates><panel_attributes>lt=&lt;-
+tampon
+m1=1</panel_attributes><additional_attributes>190;20;10;20;10;90</additional_attributes></element><element><id>UMLClass</id><coordinates><x>670</x><y>1080</y><w>130</w><h>30</h></coordinates><panel_attributes>Image
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>580</x><y>1100</y><w>230</w><h>90</h></coordinates><panel_attributes>lt=&lt;-
+solImage
+m1=1</panel_attributes><additional_attributes>160;10;160;70;10;70</additional_attributes></element><element><id>Relation</id><coordinates><x>410</x><y>1180</y><w>160</w><h>70</h></coordinates><panel_attributes>lt=&lt;-
+   dessin
+m1=1</panel_attributes><additional_attributes>100;10;100;50;10;50</additional_attributes></element><element><id>Relation</id><coordinates><x>170</x><y>580</y><w>160</w><h>690</h></coordinates><panel_attributes>lt=&lt;-
+labyrinthe
+m1=1</panel_attributes><additional_attributes>130;10;130;60;10;60;10;670;50;670</additional_attributes></element><element><id>UMLClass</id><coordinates><x>0</x><y>1260</y><w>130</w><h>30</h></coordinates><panel_attributes>Scene</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>120</x><y>1250</y><w>120</w><h>50</h></coordinates><panel_attributes>lt=&lt;-
+scene
+m1=1</panel_attributes><additional_attributes>10;20;100;20</additional_attributes></element></diagram>

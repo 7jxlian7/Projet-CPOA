@@ -1,8 +1,14 @@
+
 import static org.junit.Assert.*;
 import java.io.File;
+import java.io.IOException;
 import org.junit.Test;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.Scanner;
+import labyrinthe.ILabyrinthe;
+import labyrinthe.ISalle;
+import labyrinthe.Labyrinthe;
 
 /**
  *
@@ -38,9 +44,9 @@ public class TestFichiersLabyrinthe {
     public void testPasDeDoublon() {
         File repertoire = new File("labys/");
         File[] fichiers = getFiles(repertoire);
-         System.out.println("** Test doublon salles **");
-         System.out.println();
-         System.out.println();
+        System.out.println();
+        System.out.println("** Test doublon salles **");
+        System.out.println();
         for (File f : fichiers) {
             System.out.print("* Test du fichier : " + f.getName());
             if (!testPasDeDoublonFichier(f)) {
@@ -51,15 +57,35 @@ public class TestFichiersLabyrinthe {
     }
 
     @Test
-    public void testChemin() {
+    public void testChemin() throws IOException {
         File repertoire = new File("labys/");
         File[] fichiers = getFiles(repertoire);
-        fail("not implemented");
+        System.out.println();
+        System.out.println("** Test chemin entrée sortie **");
+        System.out.println();
+        for (File f : fichiers) {
+            System.out.print("* Test du fichier : " + f.getName());
+            if (!testCheminFichier(f)) {
+                System.out.print(" (pas de chemin entre l'entrée et la sortie)");
+            }
+            System.out.println();
+        }
+    }
+
+    public boolean testCheminFichier(File f) throws IOException {
+        System.out.println("labys/" + f.getName());
+        ILabyrinthe laby = new Labyrinthe();
+        laby.creerLabyrinthe("labys/" + f.getName());
+        Collection<ISalle> sallesChemin = laby.chemin(laby.getEntree(), laby.getSortie());
+        if (sallesChemin != null) {
+            return false;
+        }
+        return true;
     }
 
     public boolean testCoordonneesSallesFichier(File f) {
         Scanner sc = null;
-        
+
         int largeur = 0, hauteur = 0;
 
         try {
@@ -90,7 +116,7 @@ public class TestFichiersLabyrinthe {
         } catch (Exception e) {
             System.out.println(e);
         }
-        
+
         // On récupère les coordonnées du labyrinthe
         int largeur = sc.nextInt();
         int hauteur = sc.nextInt();

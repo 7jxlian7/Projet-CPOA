@@ -3,6 +3,8 @@ package labyrinthe;
 import exceptions.ExceptionInvalidFile;
 import java.util.ArrayList;
 import java.util.Collection;
+import org.jgrapht.alg.shortestpath.DijkstraShortestPath;
+import org.jgrapht.graph.DefaultEdge;
 import outils.Fichier;
 import personnages.IPersonnage;
 
@@ -102,6 +104,11 @@ public class Labyrinthe extends ArrayList<ISalle> implements ILabyrinthe {
     @Override
     public Collection<ISalle> chemin(ISalle u, ISalle v) {
         return null;
+    }
+    
+    @Override
+    public int distanceGraphe(ISalle s, ISalle t){
+        return 0;
     }
 
     /**
