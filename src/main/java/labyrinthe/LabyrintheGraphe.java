@@ -6,15 +6,11 @@
 package labyrinthe;
 
 import exceptions.ExceptionInvalidFile;
-import java.awt.List;
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.HashMap;
 import org.jgrapht.GraphPath;
-import org.jgrapht.Graphs;
 import org.jgrapht.alg.shortestpath.DijkstraShortestPath;
 import org.jgrapht.graph.DefaultEdge;
-import org.jgrapht.graph.DefaultWeightedEdge;
 import org.jgrapht.graph.SimpleGraph;
 import outils.Fichier;
 
@@ -78,14 +74,6 @@ public class LabyrintheGraphe extends Labyrinthe implements ILabyrinthe {
                 }
             }
         }
-/*
-        DijkstraShortestPath<ISalle, DefaultEdge> dsp = new DijkstraShortestPath<ISalle, DefaultEdge>(graphe);
-        GraphPath<ISalle, DefaultEdge> path = dsp.getPath(entree, sortie);
-        cheminCourt = (ArrayList) path.getVertexList();
-        for (var s : path.getVertexList()) {
-            System.out.println(s.getX() + " " + s.getY());
-        }*/
-
     }
 
     /**
@@ -110,6 +98,9 @@ public class LabyrintheGraphe extends Labyrinthe implements ILabyrinthe {
 
     /**
      * Not implemented yet.
+     * @param u
+     * @param v
+     * @return 
      */
     @Override
     public Collection<ISalle> chemin(ISalle u, ISalle v) {

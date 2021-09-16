@@ -155,3 +155,13 @@ Niveau 19, 20, 21 et 22 terminés sans difficultés majeures.
 ## Séance 16 - 15/09/2021 (Soirée)
 
 Niveau 23 et 24 terminés. Pas vraiment de problème rencontré. Cela m'a pris un peu de temps car j'ai dû consulter la documentation de ```JGraphT``` afin de pouvoir créer un graphe, ajouter les sommets, les arrêtes et trouver le chemin le plus court de ce dernier.
+
+<br>
+
+---
+
+<br>
+
+## Séance 17 - 16/09/2021 (Matin)
+
+J'ai bien avancé le niveau 26. L'implémentation de mon booléen ```seDeplace``` m'a posé quelques problèmes.

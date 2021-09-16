@@ -25,7 +25,7 @@ public abstract class ASprite implements ISprite {
     public int unite = 15;
     int x = 0;
     int y = 0;
-    boolean seDeplace;
+    public boolean seDeplace;
 
     /**
      * Construis un modèle de sprite
@@ -35,7 +35,8 @@ public abstract class ASprite implements ISprite {
     public ASprite(IPersonnage sprite, ILabyrinthe laby) {
         this.labyrinthe = laby;
         this.sprite = sprite;
-        this.setCoordonnees(sprite.getPosition().getX() * unite, sprite.getPosition().getY() * unite);
+        x = sprite.getPosition().getX() * unite;
+        y = sprite.getPosition().getY() * unite;
     }
 
     /**
@@ -44,6 +45,16 @@ public abstract class ASprite implements ISprite {
      */
     @Override
     public void dessiner(GraphicsContext g) {
+        g.drawImage(spriteImg, x, y-(spriteImg.getHeight()/2), unite, unite*1.5);
+    }
+
+    /**
+     * Définit les coordonnées graphiques du sprite
+     * @param xpix coordonnées honrizontales
+     * @param ypix coordonées verticales
+     */
+    @Override
+    public void setCoordonnees(int xpix, int ypix) {
         
         seDeplace = false;
         
@@ -52,8 +63,8 @@ public abstract class ASprite implements ISprite {
         int newY = sprite.getPosition().getY() * unite;
         
         // Calcul de la direction
-        int xDiff = x - newX;
-        int yDiff = y - newY;
+        int xDiff = x - xpix;
+        int yDiff = y - ypix;
         
         if(xDiff < 0){
             seDeplace = true;
@@ -74,18 +85,6 @@ public abstract class ASprite implements ISprite {
         if(xDiff == 0 && yDiff == 0){
             seDeplace = false;
         }
-        g.drawImage(spriteImg, x, y-(spriteImg.getHeight()/2), unite, unite*1.5);
-    }
-
-    /**
-     * Définit les coordonnées graphiques du sprite
-     * @param xpix coordonnées honrizontales
-     * @param ypix coordonées verticales
-     */
-    @Override
-    public void setCoordonnees(int xpix, int ypix) {
-        x = xpix;
-        y = ypix;
     }
 
     /**
@@ -103,7 +102,13 @@ public abstract class ASprite implements ISprite {
      */
     @Override
     public void setPosition(ISalle s) {
-        sprite.setPosition(s);
+        if(!seDeplace){
+            seDeplace = true;
+            sprite.setPosition(s);
+        }
+        if(seDeplace){
+            setCoordonnees(s.getX()*15, s.getY()*15);
+        }
     }
 
     /**

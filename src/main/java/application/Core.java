@@ -7,12 +7,14 @@ import labyrinthe.ILabyrinthe;
 import labyrinthe.ISalle;
 import personnages.IPersonnage;
 import vue2D.IVue;
+import vue2D.sprites.DragonSprite;
 import vue2D.sprites.HerosSprite;
 import vue2D.sprites.ISprite;
 import vue2D.sprites.MonstreSprite;
 
 /**
- * Classe permettant le déroulement du jeu 
+ * Classe permettant le déroulement du jeu
+ *
  * @author INFO Professors team
  */
 public class Core {
@@ -31,6 +33,7 @@ public class Core {
 
     /**
      * Initialise les sprites et personnages du jeu
+     *
      * @param vue la vue
      */
     protected void initSprites(IVue vue) {
@@ -47,10 +50,15 @@ public class Core {
             vue.add(monstre);
             personnagesLaby.add(monstre);
         }
+        IPersonnage d = new personnages.Dragon(labyrinthe.getSortie(), labyrinthe, h);
+        ISprite dragon = new DragonSprite(d, labyrinthe);
+        vue.add(dragon);
+        personnagesLaby.add(dragon);
     }
 
     /**
      * Boucle principale du jeu
+     *
      * @param vue la vue
      */
     protected void jeu(IVue vue) {
@@ -62,8 +70,7 @@ public class Core {
             for (IPersonnage p : vue) {
                 Collection<ISalle> sallesAccessibles = labyrinthe.sallesAccessibles(p);
                 destination = p.faitSonChoix(sallesAccessibles); // on demande au personnage de faire son choix de salle
-                 // deplacement
-                 p.setPosition(destination);
+                p.setPosition(destination); // deplacement
 
             }
             // detection des collisions
@@ -85,13 +92,14 @@ public class Core {
                 System.out.println("Plus que " + vue.size() + " personnages ...");
             }
 
-            temporisation(50);
+            temporisation(20);
         }
         System.out.println("Gagné!");
     }
 
     /**
      * Charge le labyrinthe
+     *
      * @param fic le fichier texte contenant le labyrinthe
      */
     private void chargementLaby(String fic) {
@@ -104,6 +112,7 @@ public class Core {
 
     /**
      * Temporise
+     *
      * @param nb nombre de millisecondes à temporiser
      */
     protected void temporisation(int nb) {

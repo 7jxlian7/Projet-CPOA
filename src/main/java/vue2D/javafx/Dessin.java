@@ -20,7 +20,7 @@ public class Dessin extends Canvas {
     private Collection<ISprite> sprites;
     private ILabyrinthe labyrinthe;
     private int unite = 15;
-    private int porteeVue = 5;
+    private int porteeVue = 105;
     private GraphicsContext tampon;
     private Image solImage;
     private Image salleImage;

@@ -1,13 +1,9 @@
 package vue2D.javafx;
 
-import java.util.ArrayList;
-import java.util.Collection;
 import javafx.event.EventHandler;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import labyrinthe.ILabyrinthe;
-import labyrinthe.ISalle;
-import labyrinthe.LabyrintheGraphe;
 import vue2D.IVue;
 import vue2D.AVue;
 import vue2D.sprites.ISprite;
@@ -27,7 +23,7 @@ public class Vue extends AVue implements IVue {
      * @param labyrinthe le labyrinthe du jeu
      */
     public Vue(ILabyrinthe labyrinthe) {
-        this.labyrinthe = (LabyrintheGraphe) labyrinthe;
+        this.labyrinthe = labyrinthe;
         dessin = new Dessin(labyrinthe, this);
         Group root = new Group();
         this.scene = new Scene(root);
