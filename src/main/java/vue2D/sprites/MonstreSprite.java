@@ -23,5 +23,6 @@ public class MonstreSprite extends ASprite {
     public MonstreSprite(IPersonnage sprite, ILabyrinthe laby) {
         super(sprite, laby);
         spriteImg = new Image("file:icons/monstre0.gif");
+        vitesse = 0.5;
     }
 }

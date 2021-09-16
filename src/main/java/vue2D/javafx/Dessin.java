@@ -20,15 +20,15 @@ public class Dessin extends Canvas {
     private Collection<ISprite> sprites;
     private ILabyrinthe labyrinthe;
     private int unite = 15;
-    private int porteeVue = 105;
+    private int porteeVue = 5;
     private GraphicsContext tampon;
     private Image solImage;
     private Image salleImage;
     private Image sortieImage;
     private Image entreeImage;
-    private Image murImage;
     private Color yellow = new Color(1, 0.9, 0.5, 0.4);
     private Collection<ISalle> listeSalles = new ArrayList<ISalle>();
+    private ISalle positionActuelle;
 
     /**
      * Construit un dessin
@@ -39,6 +39,7 @@ public class Dessin extends Canvas {
     public Dessin(ILabyrinthe labyrinthe, Collection<ISprite> sprites) {
         this.sprites = sprites;
         this.labyrinthe = labyrinthe;
+        this.positionActuelle = labyrinthe.getEntree();
         setWidth(labyrinthe.getLargeur() * unite);
         setHeight(labyrinthe.getHauteur() * unite);
         tampon = this.getGraphicsContext2D();
@@ -53,7 +54,6 @@ public class Dessin extends Canvas {
         sortieImage = new Image("file:icons/sortie.gif");
         entreeImage = new Image("file:icons/groundP.gif");
         salleImage = new Image("file:icons/ground.gif");
-        murImage = new Image("file:icons/mur0.gif");
     }
 
     /**
@@ -62,13 +62,6 @@ public class Dessin extends Canvas {
     public void dessinFond() {
         tampon.drawImage(solImage, 0, 0, unite * labyrinthe.getLargeur(),
                 unite * labyrinthe.getHauteur());
-
-        // Dessine les murs (partout pour le moment)
-        /*for (int i = 0; i < labyrinthe.getLargeur(); i++) {
-            for (int j = 0; j < labyrinthe.getHauteur(); j++) {
-                tampon.drawImage(murImage, i * unite, j * unite);
-            }
-        }*/
     }
 
     public void dessinSalles() {
@@ -90,9 +83,11 @@ public class Dessin extends Canvas {
 
     public void dessinPlusCourtChemin(ISprite heros) {
         // Si mon héros bouge, je recalcule le chemin le plus court entre sa position et la sortie
-        if (!heros.getPosition().equals(heros.faitSonChoix(labyrinthe))) {
-             listeSalles = this.labyrinthe.chemin(heros.faitSonChoix(labyrinthe), labyrinthe.getSortie());
+        if (!heros.getPosition().equals(positionActuelle)) {
+            positionActuelle = heros.getPosition();
+            listeSalles = this.labyrinthe.chemin(heros.faitSonChoix(labyrinthe), labyrinthe.getSortie());
         }
+        // Je dessine le chemin le plus court
         tampon.setFill(yellow);
         for (ISalle s : listeSalles) {
             tampon.fillRect(s.getX() * unite, s.getY() * unite, unite, unite);

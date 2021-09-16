@@ -20,12 +20,12 @@ import outils.Fichier;
  */
 public class LabyrintheGraphe extends Labyrinthe implements ILabyrinthe {
 
-    SimpleGraph<ISalle, DefaultEdge> graphe;
+    private SimpleGraph<ISalle, DefaultEdge> graphe;
     protected ISalle entree;
     protected ISalle sortie;
     private int largeur;
     private int hauteur;
-    public ArrayList<ISalle> cheminCourt;
+
 
     public LabyrintheGraphe() {
         this.graphe = new SimpleGraph<>(DefaultEdge.class);
@@ -37,7 +37,7 @@ public class LabyrintheGraphe extends Labyrinthe implements ILabyrinthe {
 
         try {
             if (!Fichier.testValide(file)) {
-                throw new ExceptionInvalidFile();
+                throw new ExceptionInvalidFile("Fichier invalide");
             } else {
                 f = new Fichier(file);
             }
@@ -69,7 +69,7 @@ public class LabyrintheGraphe extends Labyrinthe implements ILabyrinthe {
 
         for (ISalle s : this) {
             for (ISalle s2 : this) {
-                if (s.estAdjacente(s2) && !s.equals(s2)) {
+                if (s.estAdjacente(s2) && !s.equals(s2) && !graphe.containsEdge(s, s2) && !graphe.containsEdge(s2, s)) {
                     graphe.addEdge(s, s2);
                 }
             }

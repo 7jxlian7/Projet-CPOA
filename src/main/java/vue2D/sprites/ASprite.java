@@ -22,10 +22,12 @@ public abstract class ASprite implements ISprite {
     public ILabyrinthe labyrinthe;
     public Image spriteImg;
 
-    public int unite = 15;
-    int x = 0;
-    int y = 0;
+    private int unite = 15;
+    private double x = 0;
+    private double y = 0;
+    protected double vitesse;
     public boolean seDeplace;
+    private ISalle destination;
 
     /**
      * Construis un modèle de sprite
@@ -35,6 +37,7 @@ public abstract class ASprite implements ISprite {
     public ASprite(IPersonnage sprite, ILabyrinthe laby) {
         this.labyrinthe = laby;
         this.sprite = sprite;
+        this.destination = sprite.getPosition();
         x = sprite.getPosition().getX() * unite;
         y = sprite.getPosition().getY() * unite;
     }
@@ -55,32 +58,22 @@ public abstract class ASprite implements ISprite {
      */
     @Override
     public void setCoordonnees(int xpix, int ypix) {
-        
-        seDeplace = false;
-        
-        // Récuperation des nouvelles coordonnées
-        int newX = sprite.getPosition().getX() * unite;
-        int newY = sprite.getPosition().getY() * unite;
-        
+
         // Calcul de la direction
-        int xDiff = x - xpix;
-        int yDiff = y - ypix;
+        double xDiff = x - xpix;
+        double yDiff = y - ypix;
         
         if(xDiff < 0){
-            seDeplace = true;
-            x++;
+            x += vitesse;
         }
         if(xDiff > 0){
-            seDeplace = true;
-            x--;
+            x -= vitesse;
         }
         if(yDiff < 0){
-            seDeplace = true;
-            y++;
+            y += vitesse;
         }
         if(yDiff > 0){
-            seDeplace = true;
-            y--;
+            y -= vitesse;
         }
         if(xDiff == 0 && yDiff == 0){
             seDeplace = false;
@@ -105,9 +98,10 @@ public abstract class ASprite implements ISprite {
         if(!seDeplace){
             seDeplace = true;
             sprite.setPosition(s);
+            destination = s;
         }
         if(seDeplace){
-            setCoordonnees(s.getX()*15, s.getY()*15);
+            setCoordonnees(destination.getX()*15, destination.getY()*15);
         }
     }
 

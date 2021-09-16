@@ -32,6 +32,7 @@ public class HerosSprite extends ASprite implements EventHandler<KeyEvent> {
         chargementImagesSprite();
         spriteImg = downSpriteImage;
         heros = (Heros) sprite;
+        vitesse = 1;
     }
 
     /**

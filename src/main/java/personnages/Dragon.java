@@ -16,7 +16,7 @@ import labyrinthe.ISalle;
 public class Dragon extends APersonnage {
 
     ILabyrinthe labyrinthe;
-    IPersonnage heros;
+    IPersonnage herosSuivi;
 
     /**
      * Construit un dragon
@@ -28,13 +28,13 @@ public class Dragon extends APersonnage {
     public Dragon(ISalle salle, ILabyrinthe labyrinthe, IPersonnage heros) {
         this.position = salle;
         this.labyrinthe = labyrinthe;
-        this.heros = heros;
+        this.herosSuivi = heros;
     }
 
     @Override
     public ISalle faitSonChoix(Collection<ISalle> sallesAccessibles) {
 
-        Collection<ISalle> chemin = labyrinthe.chemin(this.getPosition(), heros.getPosition());
+        Collection<ISalle> chemin = labyrinthe.chemin(this.getPosition(), herosSuivi.getPosition());
         ISalle s = (ISalle) chemin.toArray()[1];
         return s;
    

@@ -30,7 +30,7 @@ public class Labyrinthe extends ArrayList<ISalle> implements ILabyrinthe {
 
         try {
             if (!Fichier.testValide(file)) {
-                throw new ExceptionInvalidFile();
+                throw new ExceptionInvalidFile("Fichier invalide");
             } else {
                 f = new Fichier(file);
             }

@@ -5,5 +5,9 @@ package exceptions;
  * @author Julian
  */
 public class ExceptionInvalidFile extends Exception {
+
+    public ExceptionInvalidFile(String message) {
+        super(message);
+    }
     
 }
