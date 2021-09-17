@@ -14,7 +14,7 @@ import org.jgrapht.graph.SimpleGraph;
 import outils.Fichier;
 
 /**
- *
+ * Représente un labyrinthe et son graphe
  * @author jforme
  */
 public class LabyrintheGraphe extends Labyrinthe implements ILabyrinthe {
@@ -26,10 +26,18 @@ public class LabyrintheGraphe extends Labyrinthe implements ILabyrinthe {
     private int hauteur;
 
 
+    /**
+     * Construit un LabyrintheGraphe
+     */
     public LabyrintheGraphe() {
         this.graphe = new SimpleGraph<>(DefaultEdge.class);
     }
 
+    /**
+     * Créer un labyrinthe et le graphe associé à partir d'un fichier.
+     *
+     * @param file le fichier texte contenant le labyrinthe
+     */
     @Override
     public void creerLabyrinthe(String file) {
         Fichier f;

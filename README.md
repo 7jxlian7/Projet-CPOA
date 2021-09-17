@@ -1,3 +1,7 @@
+# Informations
+
+Ce projet CPOA a été conçu dans le cadre d'un projet de reprise des cours en IUT Informatique de deuxième année.
+
 # Niveaux atteints
 
 ## Niveau 1

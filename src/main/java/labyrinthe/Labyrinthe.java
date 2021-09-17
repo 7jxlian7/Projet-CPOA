@@ -99,13 +99,16 @@ public class Labyrinthe extends ArrayList<ISalle> implements ILabyrinthe {
     }
 
     /**
-     * Not implemented yet.
+     * Overriding it in LabyrintheGraphe
      */
     @Override
     public Collection<ISalle> chemin(ISalle u, ISalle v) {
         return null;
     }
     
+    /**
+     * Overriding it in LabyrintheGraphe
+     */
     @Override
     public int distanceGraphe(ISalle s, ISalle t){
         return 0;

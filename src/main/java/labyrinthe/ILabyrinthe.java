@@ -20,7 +20,7 @@ public interface ILabyrinthe extends Collection<ISalle> {
 
     public Collection<ISalle> chemin(ISalle u, ISalle v); // un plus court chemin entre u et v
     
-    public int distanceGraphe(ISalle s, ISalle t);
+    public int distanceGraphe(ISalle s, ISalle t); // distance entre deux salles
 
     // dimensions grille
     public int getLargeur();

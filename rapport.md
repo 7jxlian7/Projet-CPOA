@@ -175,3 +175,17 @@ J'ai bien avancé le niveau 26. L'implémentation de mon booléen ```seDeplace``
 ## Séance 18 - 16/09/2021 (Soirée)
 
 J'ai complété le diagramme de classes cet après-midi, puis plus tard dans la soirée, j'ai terminé le niveau 26 en revoyant ma méthode ```setCoordonnees()```.
+
+<br>
+
+---
+
+<br>
+
+## Conclusion globale :
+
+Ce projet m'a permis de revoir mes connaissances sur le langage JAVA. Je n'ai pas noté de difficultés majeures. Les points qui m'ont le plus ralenti lors de ce projet sont les suivants :
+* La clarté du sujet, certaines consignes me paraissaient ambigues.
+* Le code déjà implémenté : j'ai passé tout de même pas mal de temps pour le comprendre et me l'approprier au mieux.
+
+Dans l'ensemble j'ai beaucoup aimé coder ce projet, c'était très intéressant ! Je remercie Mr. SOPENA de m'avoir aidé à le réaliser.

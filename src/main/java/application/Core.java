@@ -50,6 +50,7 @@ public class Core {
             vue.add(monstre);
             personnagesLaby.add(monstre);
         }
+        // creation du dragon
         IPersonnage d = new personnages.Dragon(labyrinthe.getSortie(), labyrinthe, h);
         ISprite dragon = new DragonSprite(d, labyrinthe);
         vue.add(dragon);
