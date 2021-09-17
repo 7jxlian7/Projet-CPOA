@@ -8,6 +8,7 @@ import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
 import labyrinthe.ILabyrinthe;
 import labyrinthe.ISalle;
+import labyrinthe.Salle;
 import vue2D.sprites.ISprite;
 
 /**
@@ -26,6 +27,7 @@ public class Dessin extends Canvas {
     private Image salleImage;
     private Image sortieImage;
     private Image entreeImage;
+    private Image murImage;
     private Color yellow = new Color(1, 0.9, 0.5, 0.4);
     private Collection<ISalle> listeSalles = new ArrayList<ISalle>();
     private ISalle positionActuelle;
@@ -54,16 +56,20 @@ public class Dessin extends Canvas {
         sortieImage = new Image("file:icons/sortie.gif");
         entreeImage = new Image("file:icons/groundP.gif");
         salleImage = new Image("file:icons/ground.gif");
+        murImage = new Image("file:icons/mur0.gif");
     }
 
     /**
-     * Dessine le fond du labyrinthe (murs, salles, entrée et sortie)
+     * Dessine le fond du labyrinthe (image de fond)
      */
     public void dessinFond() {
         tampon.drawImage(solImage, 0, 0, unite * labyrinthe.getLargeur(),
                 unite * labyrinthe.getHauteur());
     }
 
+    /**
+     * Dessine les salles à portée du heros
+     */
     public void dessinSalles() {
         // Dessine les salles
         ISprite heros = (ISprite) sprites.toArray()[0];
@@ -82,6 +88,10 @@ public class Dessin extends Canvas {
         tampon.drawImage(sortieImage, sortie.getX() * unite, sortie.getY() * unite);
     }
 
+    /**
+     * Dessine le plus court chemin entre la position du heros et la sortie du labyrinthe
+     * @param heros le heros
+     */
     public void dessinPlusCourtChemin(ISprite heros) {
         // Si mon héros bouge, je recalcule le chemin le plus court entre sa position et la sortie
         if (!heros.getPosition().equals(positionActuelle)) {

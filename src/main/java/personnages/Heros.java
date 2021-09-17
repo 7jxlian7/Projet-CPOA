@@ -9,7 +9,7 @@ import java.util.Collection;
 import labyrinthe.ISalle;
 
 /**
- * Représente un héros.
+ * Représente un héros
  * @author Julian
  */
 public class Heros extends APersonnage {
@@ -25,7 +25,7 @@ public class Heros extends APersonnage {
     }
     
     /**
-     * Retourne une postion selon le choix du personnage
+     * Retourne une salle selon le choix du personnage
      * @param sallesAccessibles liste des salles auxquelles le personnage peut accéder
      * @return la salle choisie par le personnage si elle est accessible, sinon sa position courante
      */

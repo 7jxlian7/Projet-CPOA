@@ -23,6 +23,6 @@ public class DragonSprite extends ASprite {
     public DragonSprite(IPersonnage sprite, ILabyrinthe laby) {
         super(sprite, laby);
         spriteImg = new Image("file:icons/monstre1.gif");
-        vitesse = 0.5;
+        vitesse = 0.25;
     }
 }

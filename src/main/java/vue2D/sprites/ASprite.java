@@ -58,7 +58,6 @@ public abstract class ASprite implements ISprite {
      */
     @Override
     public void setCoordonnees(int xpix, int ypix) {
-
         // Calcul de la direction
         double xDiff = x - xpix;
         double yDiff = y - ypix;

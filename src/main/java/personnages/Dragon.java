@@ -10,8 +10,8 @@ import labyrinthe.ILabyrinthe;
 import labyrinthe.ISalle;
 
 /**
- *
- * @author jforme
+ * Représente un dragon
+ * @author Julian
  */
 public class Dragon extends APersonnage {
 
@@ -31,13 +31,16 @@ public class Dragon extends APersonnage {
         this.herosSuivi = heros;
     }
 
+    /**
+     * Retourne la salle adjacente menant vers le chemin le plus court pour atteindre le heros
+     * @param sallesAccessibles liste des salles auxquelles le dragon peut accéder
+     * @return la salle adjacente la plus proche pour atteindre le personnage
+     */
     @Override
     public ISalle faitSonChoix(Collection<ISalle> sallesAccessibles) {
-
         Collection<ISalle> chemin = labyrinthe.chemin(this.getPosition(), herosSuivi.getPosition());
         ISalle s = (ISalle) chemin.toArray()[1];
         return s;
-   
     }
 
 }

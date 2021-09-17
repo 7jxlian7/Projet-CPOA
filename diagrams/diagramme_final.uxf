@@ -277,7 +277,6 @@ bg=#555555</panel_attributes><additional_attributes></additional_attributes></el
 + dessinFond(): void
 + dessinSalles(): void
 + dessinPlusCourtChemin(heros: ISprite): void
-+ estVisible(s: ISalle): boolean
 bg=#555555
 </panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>830</x><y>950</y><w>110</w><h>70</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;50;60;50;60;10;90;10</additional_attributes></element><element><id>Relation</id><coordinates><x>830</x><y>920</y><w>110</w><h>30</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>10;10;90;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1010</x><y>980</y><w>160</w><h>70</h></coordinates><panel_attributes>lt=&lt;-
 dessin
